@@ -48,17 +48,35 @@
   <ItemGroup>
     <Compile Include="AgregarBitmons.cs" />
     <Compile Include="Bitmon.cs" />
+    <Compile Include="ConfiguracionInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfiguracionInicial.Designer.cs">
+      <DependentUpon>ConfiguracionInicial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListaDeBitmons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaDeBitmons.Designer.cs">
+      <DependentUpon>ListaDeBitmons.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Terreno.cs" />
+    <EmbeddedResource Include="ConfiguracionInicial.resx">
+      <DependentUpon>ConfiguracionInicial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaDeBitmons.resx">
+      <DependentUpon>ListaDeBitmons.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

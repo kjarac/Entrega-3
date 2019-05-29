@@ -15,6 +15,7 @@ namespace Entrega3
         private const int FILAS = 8;
         private const int COLUMNAS = 8;
         private const int CELDAS = 64;
+        private const int BITMONS = 5;
 
         Bitmon bitmons = new Bitmon();
         List<Button> listaBotones;
@@ -23,7 +24,7 @@ namespace Entrega3
         bool[,] hayBitmon;
         Terreno terreno1 = new Terreno();
         AgregarBitmons addBitmon = new AgregarBitmons();
-        
+
         int time;
 
         public Form1()
@@ -53,13 +54,13 @@ namespace Entrega3
                 }
 
             }
-            
+
             terreno1.ConfiguracionTerreno(matrizBotones, terreno, CELDAS, COLUMNAS, FILAS);
-            
+            addBitmon.AddBitmon(matrizBotones, hayBitmon, COLUMNAS, FILAS, BITMONS);
+
         }
 
-       
-
+     
 
         private void cell_Click(object sender, EventArgs e)
         {
@@ -82,6 +83,12 @@ namespace Entrega3
             }
 
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form config = new ConfiguracionInicial();
+            config.Show();
         }
     }
 

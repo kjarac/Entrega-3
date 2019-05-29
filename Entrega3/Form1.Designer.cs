@@ -33,6 +33,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -90,6 +91,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.label1);
+            this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(5, 381);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(794, 143);
@@ -103,6 +105,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tipo de Terreno:\r\n\r\n[1] Vegetación (Verde)\r\n[2] Acuático (Celeste)\r\n[3] Desierto " +
     "(cafe)\r\n[4] Nieve (Blanco)\r\n[5] Volcán (Rojo)\r\n";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(167, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(110, 52);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Configuracion Inicial";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -128,6 +140,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

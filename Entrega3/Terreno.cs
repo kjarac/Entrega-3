@@ -68,26 +68,31 @@ namespace Entrega3
                         if (matrizBotones[fila, columna].Text == "V")
                         {
                             matrizBotones[fila, columna].BackColor = Color.LightGreen;
-                        }
+                            matrizBotones[fila, columna].Text = "";
+                    }
                         if (matrizBotones[fila, columna].Text == "A")
                         {
                             matrizBotones[fila, columna].BackColor = Color.Aqua;
-                        }
+                         matrizBotones[fila, columna].Text = "";
+                    }
                         if (matrizBotones[fila, columna].Text == "D")
                         {
                             matrizBotones[fila, columna].BackColor = Color.Brown;
-                        }
+                        matrizBotones[fila, columna].Text = "";
+                    }
                         if (matrizBotones[fila, columna].Text == "N")
                         {
                             matrizBotones[fila, columna].BackColor = Color.White;
-                        }
+                            matrizBotones[fila, columna].Text = "";
+                    }   
                         if (matrizBotones[fila, columna].Text == "Vn")
                         {
                             matrizBotones[fila, columna].BackColor = Color.Red;
-                        }
+                            matrizBotones[fila, columna].Text = "";
+                    }
 
                         matrizBotones[fila, columna].Enabled = true;
-                        matrizBotones[fila, columna].Text = "";
+                       // matrizBotones[fila, columna].Text = "";
                     }
         }
 

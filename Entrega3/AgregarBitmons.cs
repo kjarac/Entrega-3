@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace Entrega3
 {
     class AgregarBitmons
     {
-        public void AddBitmon(Button[,] matrizBotones, bool[,] hayBitmon, int CELDAS, int COLUMNAS, int FILAS, int cantidadB)
+        public void AddBitmon(Button[,] matrizBotones, bool[,] hayBitmon,  int COLUMNAS, int FILAS, int BITMONS)
         {
 
             // Terreno
@@ -20,52 +21,58 @@ namespace Entrega3
 
             // Se crea el terreno para cada celda, al azar
             Random random = new Random();
-            int celda = 0;
+            int cantidadB = 0;
 
-            while (cantidadB < CELDAS)
+            while (cantidadB < BITMONS)
             {
                 int fila = random.Next(FILAS);
                 int columna = random.Next(COLUMNAS);
                 bool existeUnBitmon = hayBitmon[fila, columna];
-                int tipoTerreno = random.Next(1, 7);
+                int tipoBitmon = random.Next(1, 7);
                 if (!existeUnBitmon)
                 {
-                    if (tipoTerreno == 1)
+                    if (tipoBitmon == 1)
                     {
                         hayBitmon[fila, columna] = true;
                         matrizBotones[fila, columna].Text = "Dr";
                     }
-                    else if (tipoTerreno == 2)
+                    else if (tipoBitmon == 2)
                     {
                         hayBitmon[fila, columna] = true;
                         matrizBotones[fila, columna].Text = "Do";
                     }
-                    else if (tipoTerreno == 3)
+                    else if (tipoBitmon== 3)
                     {
                         hayBitmon[fila, columna] = true;
                         matrizBotones[fila, columna].Text = "E";
                     }
-                    else if (tipoTerreno == 4)
+                    else if (tipoBitmon == 4)
                     {
                         hayBitmon[fila, columna] = true;
                         matrizBotones[fila, columna].Text = "G";
                     }
-                    else if (tipoTerreno == 5)
+                    else if (tipoBitmon == 5)
                     {
                         hayBitmon[fila, columna] = true;
                         matrizBotones[fila, columna].Text = "T";
                     }
-                    else if (tipoTerreno == 6)
+                    else if (tipoBitmon == 6)
                     {
                         hayBitmon[fila, columna] = true;
                         matrizBotones[fila, columna].Text = "W";
                     }
 
-                    celda++;
+                    cantidadB++;
 
                 }
             }
 
+            for (int fila = 0; fila < FILAS; fila++)
+                for (int columna = 0; columna < COLUMNAS; columna++)
+                {
+                    matrizBotones[fila, columna].Enabled = true;
+
+                }
         }
     }
 }
