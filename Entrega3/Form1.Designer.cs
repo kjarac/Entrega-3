@@ -101,8 +101,8 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(158, 109);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tipo de Terreno:\r\n\r\n[1] Vegetación (V)\r\n[2] Acuático (A)\r\n[3] Desierto (D)\r\n[4] N" +
-    "ieve (V)\r\n[5] Volcán (Vn)";
+            this.label1.Text = "Tipo de Terreno:\r\n\r\n[1] Vegetación (Verde)\r\n[2] Acuático (Celeste)\r\n[3] Desierto " +
+    "(cafe)\r\n[4] Nieve (Blanco)\r\n[5] Volcán (Rojo)\r\n";
             // 
             // Form1
             // 
