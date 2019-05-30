@@ -40,9 +40,10 @@ namespace Entrega3
                 if (!existeUnBitmon)
                 {
                     if (tipoBitmon == 1)
-                    {  
+                    {
+                        Dorvalo dorvalo = new Dorvalo(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                         hayBitmon[fila, columna] = true;
-                        matrizBotones[fila, columna].Text ="Dr" ;
+                        matrizBotones[fila, columna].Text = dorvalo.Especie();
                     }
                     else if (tipoBitmon == 2)
                     {
