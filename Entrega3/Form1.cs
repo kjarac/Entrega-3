@@ -17,13 +17,14 @@ namespace Entrega3
         private const int CELDAS = 64;
         private const int BITMONS = 5;
 
-        Bitmon bitmons = new Bitmon();
+        
         List<Button> listaBotones;
         Button[,] matrizBotones;
         bool[,] terreno;
         bool[,] hayBitmon;
         Terreno terreno1 = new Terreno();
         AgregarBitmons addBitmon = new AgregarBitmons();
+        
 
         int time;
 
@@ -57,6 +58,7 @@ namespace Entrega3
 
             terreno1.ConfiguracionTerreno(matrizBotones, terreno, CELDAS, COLUMNAS, FILAS);
             addBitmon.AddBitmon(matrizBotones, hayBitmon, COLUMNAS, FILAS, BITMONS);
+            
 
         }
 

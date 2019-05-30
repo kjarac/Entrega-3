@@ -10,6 +10,7 @@ namespace Entrega3
 {
     class AgregarBitmons
     {
+       
         public void AddBitmon(Button[,] matrizBotones, bool[,] hayBitmon,  int COLUMNAS, int FILAS, int BITMONS)
         {
 
@@ -25,41 +26,53 @@ namespace Entrega3
 
             while (cantidadB < BITMONS)
             {
+                
                 int fila = random.Next(FILAS);
                 int columna = random.Next(COLUMNAS);
                 bool existeUnBitmon = hayBitmon[fila, columna];
                 int tipoBitmon = random.Next(1, 7);
+                int tiempoDeVida = random.Next(1,6);
+                int puntosDeVida = random.Next(10, 250);
+                int puntosDeAtaque = random.Next(30, 101);
+                int cantidadDeHijos = 0;
+             
+               
                 if (!existeUnBitmon)
                 {
                     if (tipoBitmon == 1)
-                    {
+                    {  
                         hayBitmon[fila, columna] = true;
-                        matrizBotones[fila, columna].Text = "Dr";
+                        matrizBotones[fila, columna].Text ="Dr" ;
                     }
                     else if (tipoBitmon == 2)
                     {
+                        Doti doti = new Doti(tiempoDeVida,puntosDeVida,puntosDeAtaque,cantidadDeHijos,fila,columna);
                         hayBitmon[fila, columna] = true;
-                        matrizBotones[fila, columna].Text = "Do";
+                        matrizBotones[fila, columna].Text = doti.Especie();
                     }
                     else if (tipoBitmon== 3)
                     {
+                        Ent ent = new Ent(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                         hayBitmon[fila, columna] = true;
-                        matrizBotones[fila, columna].Text = "E";
+                        matrizBotones[fila, columna].Text = ent.Especie() ;
                     }
                     else if (tipoBitmon == 4)
                     {
+                        Gofue gofue = new Gofue(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                         hayBitmon[fila, columna] = true;
-                        matrizBotones[fila, columna].Text = "G";
+                        matrizBotones[fila, columna].Text = gofue.Especie() ;
                     }
                     else if (tipoBitmon == 5)
                     {
+                        Taplan taplan = new Taplan(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                         hayBitmon[fila, columna] = true;
-                        matrizBotones[fila, columna].Text = "T";
+                        matrizBotones[fila, columna].Text = taplan.Especie();
                     }
                     else if (tipoBitmon == 6)
                     {
+                        Wetar wetar = new Wetar(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                         hayBitmon[fila, columna] = true;
-                        matrizBotones[fila, columna].Text = "W";
+                        matrizBotones[fila, columna].Text = wetar.Especie();
                     }
 
                     cantidadB++;
@@ -74,5 +87,10 @@ namespace Entrega3
 
                 }
         }
+
+       /* public bool ExisteBitmon(int fila, int columna)
+        {
+            //return hayBitmon[fila, columna];
+        }*/
     }
 }
