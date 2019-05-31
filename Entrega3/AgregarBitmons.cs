@@ -8,12 +8,107 @@ using System.Windows.Forms;
 
 namespace Entrega3
 {
-    class AgregarBitmons
-    {
-       
-        public void AddBitmon(Button[,] matrizBotones, bool[,] hayBitmon,  int COLUMNAS, int FILAS, int BITMONS)
+    class AgregarBitmons { 
+        List<Bitmon> bitmons = new List<Bitmon>();
+        List<List<Bitmon>> listaBitmons = new List<List<Bitmon>>();
+        public List<List<Bitmon>> GetBitmons()
+        {
+            return listaBitmons;
+        }
+        public List<List<Bitmon>>  AddBitmon(Button[,] matrizBotones,  int COLUMNAS, int FILAS, int BITMONS, bool [,] hayBitmon)
         {
 
+            // Terreno
+         
+            for (int fila = 0; fila < FILAS; fila++)
+                for (int columna = 0; columna < COLUMNAS; columna++)
+                    hayBitmon[fila, columna] = false;
+
+            // Se crea el terreno para cada celda, al azar
+            Random random = new Random();
+            int cantidadB = 0;
+            List<List<Bitmon>> listaBitmons = new List<List<Bitmon>>();
+            while (cantidadB < BITMONS)
+            {
+                
+                int fila = random.Next(FILAS);
+                int columna = random.Next(COLUMNAS);
+                bool existeUnBitmon = hayBitmon[fila, columna];
+                int tipoBitmon = random.Next(1, 7);
+                int tiempoDeVida = random.Next(1,6);
+                int puntosDeVida = random.Next(10, 250);
+                int puntosDeAtaque = random.Next(30, 101);
+                int cantidadDeHijos = 0;
+
+
+                if (!existeUnBitmon)
+                {
+                    if (tipoBitmon == 1)
+                    {
+                        Dorvalo dorvalo = new Dorvalo(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
+                        hayBitmon[fila, columna] = true;
+                        matrizBotones[fila, columna].Text = dorvalo.Especie();
+
+                    }
+                    else if (tipoBitmon == 2)
+                    {
+                        Doti doti = new Doti(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
+                        hayBitmon[fila, columna] = true;
+                        matrizBotones[fila, columna].Text = doti.Especie();
+
+                    }
+                    else if (tipoBitmon == 3 || (matrizBotones[fila,columna].BackColor!=Color.Red && matrizBotones[fila, columna].BackColor != Color.Brown))
+                    {
+                        Ent ent = new Ent(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
+                        hayBitmon[fila, columna] = true;
+                        matrizBotones[fila, columna].Text = ent.Especie();
+                    }
+                    else if (tipoBitmon == 4)
+                    {
+                        Gofue gofue = new Gofue(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
+                        hayBitmon[fila, columna] = true;
+                        matrizBotones[fila, columna].Text = gofue.Especie();
+                    }
+                    else if (tipoBitmon == 5)
+                    {
+                        Taplan taplan = new Taplan(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
+                        hayBitmon[fila, columna] = true;
+                        matrizBotones[fila, columna].Text = taplan.Especie();
+                    }
+                    else if (tipoBitmon == 6 && matrizBotones[fila, columna].BackColor==Color.Aqua)
+                    {
+                        Wetar wetar = new Wetar(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
+                        hayBitmon[fila, columna] = true;
+                        matrizBotones[fila, columna].Text = wetar.Especie();
+                    }
+                    else 
+                    {
+                        Taplan taplan = new Taplan(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
+                        hayBitmon[fila, columna] = true;
+                        matrizBotones[fila, columna].Text = taplan.Especie();
+                    }
+
+                    cantidadB++;
+
+                }
+                List<Bitmon> bitmonPosicion = new List<Bitmon>();
+                listaBitmons.Add(bitmonPosicion);
+            }
+
+            for (int fila = 0; fila < FILAS; fila++)
+                for (int columna = 0; columna < COLUMNAS; columna++)
+                {
+                    matrizBotones[fila, columna].Enabled = true;
+
+                }
+            return listaBitmons;
+        }
+        
+        /*
+        public void SumarStrings()
+
+/*public void Masde1(Button [,] matrizBotones, int FILAS, int COLUMNAS, int BITMONS)
+        {
             // Terreno
 
             for (int fila = 0; fila < FILAS; fila++)
@@ -26,17 +121,17 @@ namespace Entrega3
 
             while (cantidadB < BITMONS)
             {
-                
+
                 int fila = random.Next(FILAS);
                 int columna = random.Next(COLUMNAS);
                 bool existeUnBitmon = hayBitmon[fila, columna];
                 int tipoBitmon = random.Next(1, 7);
-                int tiempoDeVida = random.Next(1,6);
+                int tiempoDeVida = random.Next(1, 6);
                 int puntosDeVida = random.Next(10, 250);
                 int puntosDeAtaque = random.Next(30, 101);
                 int cantidadDeHijos = 0;
-             
-               
+
+                if (matrizBotones[fila,columna].Text != " ") { }
                 if (!existeUnBitmon)
                 {
                     if (tipoBitmon == 1)
@@ -44,24 +139,26 @@ namespace Entrega3
                         Dorvalo dorvalo = new Dorvalo(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                         hayBitmon[fila, columna] = true;
                         matrizBotones[fila, columna].Text = dorvalo.Especie();
+
                     }
                     else if (tipoBitmon == 2)
                     {
-                        Doti doti = new Doti(tiempoDeVida,puntosDeVida,puntosDeAtaque,cantidadDeHijos,fila,columna);
+                        Doti doti = new Doti(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                         hayBitmon[fila, columna] = true;
                         matrizBotones[fila, columna].Text = doti.Especie();
+
                     }
-                    else if (tipoBitmon== 3)
+                    else if (tipoBitmon == 3)
                     {
                         Ent ent = new Ent(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                         hayBitmon[fila, columna] = true;
-                        matrizBotones[fila, columna].Text = ent.Especie() ;
+                        matrizBotones[fila, columna].Text = ent.Especie();
                     }
                     else if (tipoBitmon == 4)
                     {
                         Gofue gofue = new Gofue(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                         hayBitmon[fila, columna] = true;
-                        matrizBotones[fila, columna].Text = gofue.Especie() ;
+                        matrizBotones[fila, columna].Text = gofue.Especie();
                     }
                     else if (tipoBitmon == 5)
                     {
@@ -87,11 +184,12 @@ namespace Entrega3
                     matrizBotones[fila, columna].Enabled = true;
 
                 }
+
         }
 
-       /* public bool ExisteBitmon(int fila, int columna)
+       public bool ExisteBitmon(int fila, int columna)
         {
-            //return hayBitmon[fila, columna];
+            return hayBitmon[fila, columna];
         }*/
     }
 }

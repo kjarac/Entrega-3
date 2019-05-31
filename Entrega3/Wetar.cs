@@ -10,13 +10,15 @@ namespace Entrega3
 {
     class Wetar : Bitmon
     {
+
         bool afin;
+        int direccionMov;
         public Wetar(int tiempoDeVida, int puntosDeVida, int puntosDeAtaque, int cantidadDeHijos, int posicionX, int posicionY)
         {
             this.tiempoDeVida = tiempoDeVida;
             this.puntosDeVida = puntosDeVida;
             this.puntosDeAtaque = puntosDeAtaque;
-            this.especie = "Wetar";
+            especie = "Wetar";
             this.cantidadDeHijos = cantidadDeHijos;
             this.posicionX = posicionX;
             this.posicionY = posicionY;
@@ -25,6 +27,47 @@ namespace Entrega3
 
         public override void CambioTerreno(Button[,] matrizBotones)
         {
+        }
+        public override bool AfinidadTerreno(Button[,] matrizBotones)
+        {
+            if (matrizBotones[posicionX, posicionY].BackColor == Color.Aqua)
+            {
+                afin = true;
+                return afin;
+            }
+            else
+            {
+                afin = false;
+                return afin;
+            }
+        }
+        public  bool AfinidadTerrenoSiguiente(Button[,] matrizBotones)
+        {
+            if (matrizBotones[posicionX, posicionY-1].BackColor == Color.Aqua) //arriba
+            {
+                afin = true;
+                return afin;
+            }
+            else if (matrizBotones[posicionX, posicionY +1].BackColor == Color.Aqua) //abajo
+            {
+                afin = true;
+                return afin;
+            }
+            else if (matrizBotones[posicionX+1, posicionY ].BackColor == Color.Aqua) //derecha
+            {
+                afin = true;
+                return afin;
+            }
+            if (matrizBotones[posicionX-1, posicionY].BackColor == Color.Aqua) //arriba
+            {
+                afin = true;
+                return afin;
+            }
+            else 
+            {
+                afin = false;
+                return afin;
+            }
         }
         public override int Daño(Bitmon bitmon) //Daño, recibe el otro bitmon en la misma celda
         {
@@ -37,49 +80,44 @@ namespace Entrega3
                 return Convert.ToInt32(puntosDeAtaque * 0.5);
             }
         }
-       /* public override void Desplazamiento(Terreno mapa) 
+       public override void Desplazamiento() 
         {
             Random random = new Random();
-            while (true)
-            {
-                int rnd = random.Next(3);
-                if (rnd == 0 && posicionX != mapa.Ancho()) // con 0 se mueve hacia la derecha
+            
+            
+                int direccion = random.Next(4);
+            if(AfinidadTerreno(matrizBotones))
+                if (direccion == 0 && posicionX<=7) // con 0 se mueve hacia la derecha
                 {
                     posicionX += 1;
-                    break;
+                    direccionMov = direccion;
+                    
                 }
-                else if (rnd == 1 && posicionX != 0) // con 1 se mueve hacia la izquierda
+                else if (direccion == 1 && posicionX>=1) // con 1 se mueve hacia la izquierda
                 {
                     posicionX -= 1;
-                    break;
+                    direccionMov = direccion;
+
                 }
-                else if (rnd == 2 && posicionY != 0) //con 2 se mueve hacia arriba
+                else if (direccion == 2 && posicionY >=1) //con 2 se mueve hacia arriba
                 {
                     posicionY -= 1;
-                    break;
+                    direccionMov = direccion;
                 }
-                else if (rnd == 3 && posicionY != mapa.Largo())// con 3 se mueve hacia abajo            
+                else if (direccion == 3 && posicionY <=7)// con 3 se mueve hacia abajo            
                 {
                     posicionY += 1;
-                    break;
-                }
-                else
-                {
-                    continue;
+                    direccionMov = direccion;
                 }
 
+           
             }
-        }*/
-        public override void AfinidadTerreno( Button[,] matrizBotones) 
-        {
-            if (matrizBotones[posicionX, posicionY].BackColor == Color.Aqua)
-            {
-                afin = true;
-            }
-            else
-            {
-                afin = false;
-            }
+           
+          
+
+
         }
-    }
-}
+        }
+
+    
+

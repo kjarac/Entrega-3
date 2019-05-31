@@ -57,8 +57,11 @@ namespace Entrega3
             }
 
             terreno1.ConfiguracionTerreno(matrizBotones, terreno, CELDAS, COLUMNAS, FILAS);
-            addBitmon.AddBitmon(matrizBotones, hayBitmon, COLUMNAS, FILAS, BITMONS);
-            
+            addBitmon.AddBitmon(matrizBotones, COLUMNAS, FILAS, BITMONS, hayBitmon);
+            List<List<Bitmon>> listaBitmons = new List<List<Bitmon>>();
+            listaBitmons = addBitmon.GetBitmons();
+
+
 
         }
 
@@ -92,6 +95,8 @@ namespace Entrega3
             Form config = new ConfiguracionInicial();
             config.Show();
         }
+
+        //button 2, mes siguiente
     }
 
 }

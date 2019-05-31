@@ -10,6 +10,7 @@ namespace Entrega3
 {
     class Ent : Bitmon
     {
+        
         public Ent(int tiempoDeVida, int puntosDeVida, int puntosDeAtaque, int cantidadDeHijos, int posicionX, int posicionY)
         {
             this.tiempoDeVida = tiempoDeVida;
@@ -20,9 +21,19 @@ namespace Entrega3
             this.posicionX = posicionX;
             this.posicionY = posicionY;
         }
-        public override void AfinidadTerreno(Button[,] matrizBotones)
+        public override bool AfinidadTerreno(Button[,] matrizBotones)
         {
-            throw new NotImplementedException();
+
+            if (matrizBotones[posicionX, posicionY].BackColor == Color.White || matrizBotones[posicionX, posicionY].BackColor == Color.Brown  || matrizBotones[posicionX, posicionY].BackColor == Color.LightGreen)
+            {
+                afin = true;
+                return afin;
+            }
+            else
+            {
+                afin = false;
+                return afin;
+            }
         }
 
         public override void CambioTerreno(Button[,] matrizBotones)
@@ -35,9 +46,9 @@ namespace Entrega3
             throw new NotImplementedException();
         }
 
-        /*public override void Desplazamiento(Terreno mapa)
+        public override void Desplazamiento()
         {
             throw new NotImplementedException();
-        }*/
+        }
     }
 }

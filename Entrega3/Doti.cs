@@ -11,6 +11,7 @@ namespace Entrega3
     class Doti : Bitmon
     {
         bool afin;
+        int direccionMov;
         public Doti(int tiempoDeVida, int puntosDeVida, int puntosDeAtaque, int cantidadDeHijos, int posicionX, int posicionY)
         {
             this.tiempoDeVida = tiempoDeVida;
@@ -22,9 +23,10 @@ namespace Entrega3
             this.posicionY = posicionY;
         }
 
-        public override void AfinidadTerreno( Button[,] matrizBotones)
+        public override bool AfinidadTerreno( Button[,] matrizBotones)
         {
-            afin = true; 
+            afin = true;
+            return afin;
         }
 
         public override void CambioTerreno(Button[,] matrizBotones)
@@ -45,9 +47,36 @@ namespace Entrega3
             return puntosDeAtaque;
         }
 
-      /*  public override void Desplazamiento(Terreno mapa)
+        public override void Desplazamiento()
         {
-            throw new NotImplementedException();
-        }*/
-    }
+            Random random = new Random();
+
+
+            int direccion = random.Next(4);
+            if (AfinidadTerreno(matrizBotones))
+                if (direccion == 0 && posicionX <= 7) // con 0 se mueve hacia la derecha
+                {
+                    posicionX += 1;
+                    direccionMov = direccion;
+
+                }
+                else if (direccion == 1 && posicionX >= 1) // con 1 se mueve hacia la izquierda
+                {
+                    posicionX -= 1;
+                    direccionMov = direccion;
+
+                }
+                else if (direccion == 2 && posicionY >= 1) //con 2 se mueve hacia arriba
+                {
+                    posicionY -= 1;
+                    direccionMov = direccion;
+                }
+                else if (direccion == 3 && posicionY <= 7)// con 3 se mueve hacia abajo            
+                {
+                    posicionY += 1;
+                    direccionMov = direccion;
+                }
+        }
 }
+    }
+

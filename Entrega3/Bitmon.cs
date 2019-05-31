@@ -17,12 +17,17 @@ namespace Entrega3
         protected int cantidadDeHijos;
         protected int posicionX;
         protected int posicionY;
+        protected Button[,] matrizBotones;
+        protected int direccionMov;
+        protected bool afin;
 
         public abstract void CambioTerreno(Button[,] matrizBotones);
 
+        public abstract bool AfinidadTerreno(Button[,] matrizBotones);
+
         public abstract int Daño(Bitmon bitmon);
 
-        //public abstract void Desplazamiento(Terreno mapa);
+        public abstract void Desplazamiento();
 
         public int PosicionX()
         {
@@ -66,7 +71,7 @@ namespace Entrega3
         {
             return puntosDeAtaque;
         }
-        public abstract void AfinidadTerreno(Button[,] matrizBotones);
+       
 
 
 
