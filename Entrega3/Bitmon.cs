@@ -28,6 +28,8 @@ namespace Entrega3
 
         public abstract void Desplazamiento(Button[,] matrizBotones);
 
+        public abstract bool AfinidadBitmons(Bitmon bitmon;
+
         public int PosicionX()
         {
             return posicionX;

@@ -11,14 +11,14 @@ namespace Entrega3
     class Wetar : Bitmon
     {
 
-        bool afin;
-        int direccionMov;
+        
+      
         public Wetar(int tiempoDeVida, int puntosDeVida, int puntosDeAtaque, int cantidadDeHijos, int posicionX, int posicionY)
         {
             this.tiempoDeVida = tiempoDeVida;
             this.puntosDeVida = puntosDeVida;
             this.puntosDeAtaque = puntosDeAtaque;
-            especie = "Wetar";
+            especie = "🐳";
             this.cantidadDeHijos = cantidadDeHijos;
             this.posicionX = posicionX;
             this.posicionY = posicionY;
@@ -71,7 +71,7 @@ namespace Entrega3
         }
         public override int Daño(Bitmon bitmon) //Daño, recibe el otro bitmon en la misma celda
         {
-            if (bitmon.Especie() == "Gofue" || bitmon.Especie() == "Taplan")
+            if (bitmon.Especie() == "🐉" || bitmon.Especie() == "🐍")
             {
                 return puntosDeAtaque * 2;
             }
@@ -112,11 +112,21 @@ namespace Entrega3
 
            
             }
-           
-          
 
-
+        public override bool AfinidadBitmons(Bitmon bitmon)
+        {
+            if(bitmon.Especie() == "🐉" || bitmon.Especie() == "🐍")
+            {
+                afin = false;
+                return afin;
+            }
+            else
+            {
+                afin = true;
+                return afin;
+            }
         }
+    }
         }
 
     

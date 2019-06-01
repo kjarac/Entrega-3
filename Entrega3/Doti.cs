@@ -17,10 +17,16 @@ namespace Entrega3
             this.tiempoDeVida = tiempoDeVida;
             this.puntosDeVida = puntosDeVida;
             this.puntosDeAtaque = puntosDeAtaque;
-            this.especie = "Doti";
+            this.especie = "🦄";
             this.cantidadDeHijos = cantidadDeHijos;
             this.posicionX = posicionX;
             this.posicionY = posicionY;
+        }
+
+        public override bool AfinidadBitmons(Bitmon bitmon) // Se lleva bien con todos
+        {
+            afin = true;
+            return afin;
         }
 
         public override bool AfinidadTerreno( Button[,] matrizBotones)

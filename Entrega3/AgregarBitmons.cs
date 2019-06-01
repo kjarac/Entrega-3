@@ -53,7 +53,7 @@ namespace Entrega3
                     {
                         Doti doti = new Doti(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                         hayBitmon[fila, columna] = true;
-                        matrizBotones[fila, columna].Text = doti.Especie();
+                        matrizBotones[fila, columna].Text =doti.Especie();
                         bitmons.Add(doti);
 
                     }
@@ -71,14 +71,8 @@ namespace Entrega3
                         matrizBotones[fila, columna].Text = gofue.Especie();
                         bitmons.Add(gofue);
                     }
-                    else if (tipoBitmon == 5)
-                    {
-                        Taplan taplan = new Taplan(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
-                        hayBitmon[fila, columna] = true;
-                        matrizBotones[fila, columna].Text = taplan.Especie();
-                        bitmons.Add(taplan);
-                    }
-                    else if (tipoBitmon == 6 && matrizBotones[fila, columna].BackColor==Color.Aqua)
+                   
+                    else if (tipoBitmon == 5 && matrizBotones[fila, columna].BackColor==Color.Aqua)
                     {
                         Wetar wetar = new Wetar(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                         hayBitmon[fila, columna] = true;

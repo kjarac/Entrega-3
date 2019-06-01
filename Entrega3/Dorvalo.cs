@@ -11,21 +11,21 @@ namespace Entrega3
     class Dorvalo : Bitmon
     {
 
-        bool afin;
+      
        
         public Dorvalo(int tiempoDeVida, int puntosDeVida, int puntosDeAtaque, int cantidadDeHijos, int posicionX, int posicionY)
         {
             this.tiempoDeVida = tiempoDeVida;
             this.puntosDeVida = puntosDeVida;
             this.puntosDeAtaque = puntosDeAtaque;
-            this.especie = "Dorvalo";
+            this.especie = "🦅";
             this.cantidadDeHijos = cantidadDeHijos;
             this.posicionX = posicionX;
             this.posicionY = posicionY;
         }
 
 
-        public override void CambioTerreno(Button[,] matrizBotones)
+        public override void CambioTerreno(Button[,] matrizBotones) // no cambia el terreno, solo lo habita
         {
         }
         public override void Desplazamiento(Button[,] matrizBotones)
@@ -56,7 +56,7 @@ namespace Entrega3
         }
         public override int Daño(Bitmon bitmon)
         {
-            if (bitmon.Especie() == "Ent" || bitmon.Especie() == "Wetar")
+            if (bitmon.Especie() == "🌵" || bitmon.Especie() == "🐳")
             {
                 return puntosDeAtaque * 2;
             }
@@ -71,6 +71,20 @@ namespace Entrega3
         {
             afin = true;
             return afin;
+        }
+
+        public override bool AfinidadBitmons(Bitmon bitmon)
+        {
+            if(bitmon.Especie() == "🌵" || bitmon.Especie() == "🐳")
+            {
+                afin = false;
+                return afin;
+            }
+            else
+            {
+                afin = true;
+                return afin;
+            }
         }
     }
 }

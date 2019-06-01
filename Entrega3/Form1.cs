@@ -27,7 +27,7 @@ namespace Entrega3
         List<Bitmon> listaBitmons = new List<Bitmon>();
 
 
-        int time=9;
+        int time=0;
 
         public Form1()
         {
@@ -136,12 +136,11 @@ namespace Entrega3
                 matrizBotones[fila, columna].Text = ent.Especie();
                 listaBitmons.Add(ent);
             }
+
+            textBox1.Text = time.ToString();
         }
 
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
 
         //button 2, mes siguiente
     }

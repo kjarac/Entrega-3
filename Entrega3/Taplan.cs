@@ -10,14 +10,14 @@ namespace Entrega3
 {
     class Taplan:Bitmon
     {
-        bool afin;
+        
     
         public Taplan(int tiempoDeVida, int puntosDeVida, int puntosDeAtaque, int cantidadDeHijos, int posicionX, int posicionY)
         {
             this.tiempoDeVida = tiempoDeVida;
             this.puntosDeVida = puntosDeVida;
             this.puntosDeAtaque = puntosDeAtaque;
-            this.especie = "Taplan";
+            this.especie = "🐍";
             this.cantidadDeHijos = cantidadDeHijos;
             this.posicionX = posicionX;
             this.posicionY = posicionY;
@@ -38,7 +38,7 @@ namespace Entrega3
         }
         public override int Daño(Bitmon bitmon)
         {
-            if (bitmon.Especie() == "Wetar" || bitmon.Especie() == "Doti")
+            if (bitmon.Especie() == "🐳" || bitmon.Especie() == "🦄")
             {
                 return puntosDeAtaque * 2;
             }
@@ -91,5 +91,18 @@ namespace Entrega3
             }
         }
 
+        public override bool AfinidadBitmons(Bitmon bitmon)
+        {
+            if(bitmon.Especie() == "🐳" || bitmon.Especie() == "🦄")
+            {
+                afin = false;
+                return afin;
+            }
+            else
+            {
+                afin = true;
+                return afin;
+            }
+        }
     }
 }

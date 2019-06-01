@@ -16,11 +16,18 @@ namespace Entrega3
             this.tiempoDeVida = tiempoDeVida;
             this.puntosDeVida = puntosDeVida;
             this.puntosDeAtaque = puntosDeAtaque;
-            this.especie = "Ent";
+            this.especie = "🌵";
             this.cantidadDeHijos = cantidadDeHijos;
             this.posicionX = posicionX;
             this.posicionY = posicionY;
         }
+
+        public override bool AfinidadBitmons(Bitmon) 
+        {
+            afin = true;
+            return afin;
+        }
+
         public override bool AfinidadTerreno(Button[,] matrizBotones)
         {
 
@@ -38,12 +45,12 @@ namespace Entrega3
 
         public override void CambioTerreno(Button[,] matrizBotones)
         {
-            throw new NotImplementedException();
+            
         }
 
         public override int Daño(Bitmon bitmon)
         {
-            throw new NotImplementedException();
+            return 0;
         }
 
         public override void Desplazamiento(Button[,] matrizBotones)
