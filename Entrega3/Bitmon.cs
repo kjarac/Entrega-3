@@ -28,8 +28,6 @@ namespace Entrega3
 
         public abstract void Desplazamiento(Button[,] matrizBotones);
 
-        public abstract bool AfinidadBitmons(Bitmon bitmon;
-
         public int PosicionX()
         {
             return posicionX;
@@ -58,6 +56,7 @@ namespace Entrega3
         public void Reproducirse()
         {
             cantidadDeHijos += 1;
+            tiempoDeVida += Convert.ToInt32(tiempoDeVida * 0.7);
         }
         public void ReducirTiempoDeVida(int a)
         {
