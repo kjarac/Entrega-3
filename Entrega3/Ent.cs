@@ -21,6 +21,10 @@ namespace Entrega3
             this.posicionX = posicionX;
             this.posicionY = posicionY;
         }
+        public override bool AfinidadBitmons(Bitmon bitmon)
+        {
+            return true;
+        }
         public override bool AfinidadTerreno(Button[,] matrizBotones)
         {
 

@@ -17,7 +17,7 @@ namespace Entrega3
         private const int CELDAS = 64;
         private const int BITMONS = 5;
 
-
+        List<Bitmon> bithalla = new List<Bitmon>();
         List<Button> listaBotones;
         Button[,] matrizBotones;
         bool[,] terreno;
@@ -36,7 +36,7 @@ namespace Entrega3
             matrizBotones = new Button[FILAS, COLUMNAS];
             terreno = new bool[FILAS, COLUMNAS];
             hayBitmon = new bool[FILAS, COLUMNAS];
-
+            label2.Text = "Cantidad de bitmons";
             listaBotones = new List<Button>();
             for (int fila = 0; fila < FILAS; fila++)
             {
@@ -140,14 +140,17 @@ namespace Entrega3
                 listaBitmons.Add(ent);
             }
             List<Bitmon> aux = new List<Bitmon>();
+            aux = listaBitmons;
             int a = 0;
             int b = 0;
             bool crearBitmon = true;
             foreach (Bitmon bit in listaBitmons)
             {
+                a++;
                 foreach (Bitmon bits in listaBitmons)
                 {
-                    if(crearBitmon && a!=b)
+                    b++;
+                    if(crearBitmon && bit!=bits)
                     {
                         if (bit.PosicionX() == bits.PosicionX() && bit.PosicionY() == bits.PosicionY())
                         {
@@ -169,7 +172,7 @@ namespace Entrega3
                                     hayBitmon[fila, columna] = true;
                                     matrizBotones[fila, columna].Text = dorvalo.Especie();
                                     aux.Add(dorvalo);
-
+                                    MessageBox.Show("Ha nacido un dorvalo");
                                 }
                                 else if (tipoBitmon == 2)
                                 {
@@ -177,6 +180,7 @@ namespace Entrega3
                                     hayBitmon[fila, columna] = true;
                                     matrizBotones[fila, columna].Text = doti.Especie();
                                     aux.Add(doti);
+                                    MessageBox.Show("Ha nacido un doti");
 
                                 }
                                 else if (tipoBitmon == 3 || (matrizBotones[fila, columna].BackColor != Color.Red && matrizBotones[fila, columna].BackColor != Color.Brown))
@@ -185,6 +189,7 @@ namespace Entrega3
                                     hayBitmon[fila, columna] = true;
                                     matrizBotones[fila, columna].Text = ent2.Especie();
                                     aux.Add(ent2);
+                                    MessageBox.Show("Ha nacido un ent");
                                 }
                                 else if (tipoBitmon == 4)
                                 {
@@ -192,20 +197,15 @@ namespace Entrega3
                                     hayBitmon[fila, columna] = true;
                                     matrizBotones[fila, columna].Text = gofue.Especie();
                                     aux.Add(gofue);
+                                    MessageBox.Show("Ha nacido un gofue");
                                 }
-                                else if (tipoBitmon == 5)
-                                {
-                                    Taplan taplan = new Taplan(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
-                                    hayBitmon[fila, columna] = true;
-                                    matrizBotones[fila, columna].Text = taplan.Especie();
-                                    aux.Add(taplan);
-                                }
-                                else if (tipoBitmon == 6 && matrizBotones[fila, columna].BackColor == Color.Aqua)
+                                else if (tipoBitmon == 5 && matrizBotones[fila, columna].BackColor == Color.Aqua)
                                 {
                                     Wetar wetar = new Wetar(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                                     hayBitmon[fila, columna] = true;
                                     matrizBotones[fila, columna].Text = wetar.Especie();
                                     aux.Add(wetar);
+                                    MessageBox.Show("Ha nacido un dorvalo");
                                 }
                                 else
                                 {
@@ -213,6 +213,7 @@ namespace Entrega3
                                     hayBitmon[fila, columna] = true;
                                     matrizBotones[fila, columna].Text = taplan.Especie();
                                     aux.Add(taplan);
+                                    MessageBox.Show("Ha nacido un taplan");
                                 }
                                 crearBitmon = false;
                             }
@@ -220,23 +221,43 @@ namespace Entrega3
                             {
                                 bit.ReducirPuntosDeVida(bits.Daño(bit));
                                 bits.ReducirPuntosDeVida(bit.Daño(bit));
+                                MessageBox.Show(bit.Especie() + " v/s " + bits.Especie());
+                                if (bit.Muere())
+                                {
+                                    bithalla.Add(bit);
+                                    aux.Remove(bit);
+                                    MessageBox.Show("Ha muerto un " + bit.Especie());
+                                } else if (bits.Muere())
+                                {
+                                    bithalla.Add(bits);
+                                    aux.Remove(bits);
+                                    MessageBox.Show("Ha muerto un " + bits.Especie());
+                                }
+
                             }
                         }
                     }
-                    b++;
                     }
-                a++;
+                break;
             }
-            foreach(Bitmon bit in aux)
-            {
-                listaBitmons.Add(bit);
-            }
+            listaBitmons = aux;
         }
 
                 
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bitmons muertos: " + bithalla.Count);
+            foreach(Bitmon bit in listaBitmons)
+            {
+                
+            }
+            
 
         }
 

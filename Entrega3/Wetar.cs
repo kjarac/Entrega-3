@@ -11,8 +11,8 @@ namespace Entrega3
     class Wetar : Bitmon
     {
 
-        
-      
+
+        Random random = new Random();
         public Wetar(int tiempoDeVida, int puntosDeVida, int puntosDeAtaque, int cantidadDeHijos, int posicionX, int posicionY)
         {
             this.tiempoDeVida = tiempoDeVida;
@@ -82,7 +82,7 @@ namespace Entrega3
         }
        public override void Desplazamiento(Button[,] matrizBotones) 
         {
-            Random random = new Random();
+            
             
             
                 int direccion = random.Next(4);

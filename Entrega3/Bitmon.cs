@@ -19,10 +19,11 @@ namespace Entrega3
         protected int posicionY;
         protected int direccionMov;
         protected bool afin;
-
+        public abstract bool AfinidadBitmons(Bitmon bitmon);
         public abstract void CambioTerreno(Button[,] matrizBotones);
 
         public abstract bool AfinidadTerreno(Button[,] matrizBotones);
+        
 
         public abstract int Daño(Bitmon bitmon);
 
@@ -42,7 +43,7 @@ namespace Entrega3
         }
         public bool Muere()
         {
-            if (tiempoDeVida == 0 || puntosDeVida == 0)
+            if (tiempoDeVida == 0 || puntosDeVida <= 0)
             {
                 return true;
             }
