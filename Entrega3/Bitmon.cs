@@ -17,7 +17,6 @@ namespace Entrega3
         protected int cantidadDeHijos;
         protected int posicionX;
         protected int posicionY;
-        protected Button[,] matrizBotones;
         protected int direccionMov;
         protected bool afin;
 
@@ -27,7 +26,7 @@ namespace Entrega3
 
         public abstract int Daño(Bitmon bitmon);
 
-        public abstract void Desplazamiento();
+        public abstract void Desplazamiento(Button[,] matrizBotones);
 
         public int PosicionX()
         {

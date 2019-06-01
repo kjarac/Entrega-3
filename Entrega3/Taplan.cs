@@ -47,13 +47,12 @@ namespace Entrega3
                 return Convert.ToInt32(puntosDeAtaque * 0.5);
             }
         }
-       public override void Desplazamiento()
+       public override void Desplazamiento(Button[,] matrizBotones)
         {
             Random random = new Random();
 
 
             int direccion = random.Next(4);
-            if (AfinidadTerreno(matrizBotones))
                 if (direccion == 0 && posicionX <= 7) // con 0 se mueve hacia la derecha
                 {
                     posicionX += 1;

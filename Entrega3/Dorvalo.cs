@@ -28,12 +28,12 @@ namespace Entrega3
         public override void CambioTerreno(Button[,] matrizBotones)
         {
         }
-        public override void Desplazamiento()
+        public override void Desplazamiento(Button[,] matrizBotones)
         {
             Random random = new Random();
 
             int direccion = random.Next(4);
-            if (direccion == 0&& posicionX<=6)//derecha
+            if (direccion == 0&& posicionX<=5)//derecha
             {
                 posicionX += 2;
                 direccionMov = direccion;
@@ -48,7 +48,7 @@ namespace Entrega3
                 posicionY -= 2;
                 direccionMov = direccion;
             }
-            else if( direccion==3 && posicionY <= 6) //abajo
+            else if( direccion==3 && posicionY <= 5) //abajo
             {
                 posicionY += 2;
                 direccionMov = direccion;

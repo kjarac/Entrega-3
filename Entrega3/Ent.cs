@@ -46,9 +46,8 @@ namespace Entrega3
             throw new NotImplementedException();
         }
 
-        public override void Desplazamiento()
+        public override void Desplazamiento(Button[,] matrizBotones)
         {
-            throw new NotImplementedException();
         }
     }
 }

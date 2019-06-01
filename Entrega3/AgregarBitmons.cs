@@ -10,12 +10,11 @@ namespace Entrega3
 {
     class AgregarBitmons { 
         List<Bitmon> bitmons = new List<Bitmon>();
-        List<List<Bitmon>> listaBitmons = new List<List<Bitmon>>();
-        public List<List<Bitmon>> GetBitmons()
+        public List<Bitmon> GetBitmons()
         {
-            return listaBitmons;
+            return bitmons;
         }
-        public List<List<Bitmon>>  AddBitmon(Button[,] matrizBotones,  int COLUMNAS, int FILAS, int BITMONS, bool [,] hayBitmon)
+        public List<Bitmon>  AddBitmon(Button[,] matrizBotones,  int COLUMNAS, int FILAS, int BITMONS, bool [,] hayBitmon)
         {
 
             // Terreno
@@ -27,7 +26,6 @@ namespace Entrega3
             // Se crea el terreno para cada celda, al azar
             Random random = new Random();
             int cantidadB = 0;
-            List<List<Bitmon>> listaBitmons = new List<List<Bitmon>>();
             while (cantidadB < BITMONS)
             {
                 
@@ -48,6 +46,7 @@ namespace Entrega3
                         Dorvalo dorvalo = new Dorvalo(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                         hayBitmon[fila, columna] = true;
                         matrizBotones[fila, columna].Text = dorvalo.Especie();
+                        bitmons.Add(dorvalo);
 
                     }
                     else if (tipoBitmon == 2)
@@ -55,6 +54,7 @@ namespace Entrega3
                         Doti doti = new Doti(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                         hayBitmon[fila, columna] = true;
                         matrizBotones[fila, columna].Text = doti.Especie();
+                        bitmons.Add(doti);
 
                     }
                     else if (tipoBitmon == 3 || (matrizBotones[fila,columna].BackColor!=Color.Red && matrizBotones[fila, columna].BackColor != Color.Brown))
@@ -62,37 +62,41 @@ namespace Entrega3
                         Ent ent = new Ent(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                         hayBitmon[fila, columna] = true;
                         matrizBotones[fila, columna].Text = ent.Especie();
+                        bitmons.Add(ent);
                     }
                     else if (tipoBitmon == 4)
                     {
                         Gofue gofue = new Gofue(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                         hayBitmon[fila, columna] = true;
                         matrizBotones[fila, columna].Text = gofue.Especie();
+                        bitmons.Add(gofue);
                     }
                     else if (tipoBitmon == 5)
                     {
                         Taplan taplan = new Taplan(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                         hayBitmon[fila, columna] = true;
                         matrizBotones[fila, columna].Text = taplan.Especie();
+                        bitmons.Add(taplan);
                     }
                     else if (tipoBitmon == 6 && matrizBotones[fila, columna].BackColor==Color.Aqua)
                     {
                         Wetar wetar = new Wetar(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                         hayBitmon[fila, columna] = true;
                         matrizBotones[fila, columna].Text = wetar.Especie();
+                        bitmons.Add(wetar);
                     }
                     else 
                     {
                         Taplan taplan = new Taplan(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                         hayBitmon[fila, columna] = true;
                         matrizBotones[fila, columna].Text = taplan.Especie();
+                        bitmons.Add(taplan);
                     }
 
                     cantidadB++;
 
                 }
-                List<Bitmon> bitmonPosicion = new List<Bitmon>();
-                listaBitmons.Add(bitmonPosicion);
+                
             }
 
             for (int fila = 0; fila < FILAS; fila++)
@@ -101,7 +105,7 @@ namespace Entrega3
                     matrizBotones[fila, columna].Enabled = true;
 
                 }
-            return listaBitmons;
+            return bitmons;
         }
         
         /*
