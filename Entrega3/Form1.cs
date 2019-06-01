@@ -27,7 +27,7 @@ namespace Entrega3
         List<Bitmon> listaBitmons = new List<Bitmon>();
 
 
-        int time = 9;
+        int time = 0;
 
         public Form1()
         {
@@ -113,7 +113,9 @@ namespace Entrega3
 
         private void button2_Click(object sender, EventArgs e)
         {
-            label2.Text ="Cantidad de bitmons" + listaBitmons.Count;
+            time++;
+            label4.Text = "Mes " + time;
+            label2.Text ="Cantidad de bitmons: " + listaBitmons.Count;
             Random random = new Random();
             int fila = random.Next(FILAS);
             int columna = random.Next(COLUMNAS);
@@ -123,7 +125,6 @@ namespace Entrega3
             int puntosDeVida = random.Next(10, 250);
             int puntosDeAtaque = random.Next(30, 101);
             int cantidadDeHijos = 0;
-            time++;
             foreach (Bitmon bit in listaBitmons)
             {
                 bit.Desplazamiento(matrizBotones);
@@ -253,10 +254,41 @@ namespace Entrega3
         private void button3_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Bitmons muertos: " + bithalla.Count);
+            int wetar = 0;
+            int dorvalo = 0;
+            int doti = 0;
+            int ent = 0;
+            int gofue = 0;
+            int taplan = 0;
+
             foreach(Bitmon bit in listaBitmons)
             {
-                
+                if(bit.Especie()== "🐳")
+                {
+                    wetar += 1;
+                }
+                else if (bit.Especie() == "🐍")
+                {
+                    taplan += 1;
+                }else if (bit.Especie()== "🐉")
+                {
+                    gofue += 1;
+
+                }else if (bit.Especie()== "🌵")
+                {
+                    ent += 1;
+
+                }else if (bit.Especie()== "🦄")
+                {
+                    doti += 1;
+
+                }
+                else
+                {
+                    dorvalo += 1;
+                }
             }
+            MessageBox.Show(" Cantidad de wetar: " + wetar + "\n Cantidad de doti: " + doti + "\n Cantidad de dorvalo: " + dorvalo + "\n Cantidad de ent: " + ent + "\n Cantidad de taplan: " + taplan);
             
 
         }
