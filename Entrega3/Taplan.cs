@@ -17,7 +17,7 @@ namespace Entrega3
             this.tiempoDeVida = tiempoDeVida;
             this.puntosDeVida = puntosDeVida;
             this.puntosDeAtaque = puntosDeAtaque;
-            this.especie = "🐍";
+            especie = "🐍";
             this.cantidadDeHijos = cantidadDeHijos;
             this.posicionX = posicionX;
             this.posicionY = posicionY;
@@ -65,12 +65,12 @@ namespace Entrega3
                     direccionMov = direccion;
 
                 }
-                else if (direccion == 2 && posicionY >= 1) //con 2 se mueve hacia arriba
+                else if (direccion == 3 && posicionY >= 1) //con 2 se mueve hacia arriba
                 {
                     posicionY -= 1;
                     direccionMov = direccion;
                 }
-                else if (direccion == 3 && posicionY <= 6)// con 3 se mueve hacia abajo            
+                else if (direccion == 2 && posicionY <= 6)// con 3 se mueve hacia abajo            
                 {
                     posicionY += 1;
                     direccionMov = direccion;
@@ -93,7 +93,7 @@ namespace Entrega3
 
         public override bool AfinidadBitmons(Bitmon bitmon)
         {
-            if(bitmon.Especie() == "🐳" || bitmon.Especie() == "🦄")
+            if(bitmon.Especie() == "🐳" || bitmon.Especie() == "🦄" || bitmon.Especie() == "🌵")
             {
                 afin = false;
                 return afin;

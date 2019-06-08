@@ -32,17 +32,17 @@ namespace Entrega3
         {
 
             int direccion = random.Next(4);
-            if (direccion == 0&& posicionX<=5)//derecha
+            if (direccion == 1 && posicionX<=5)//derecha
             {
                 posicionX += 2;
                 direccionMov = direccion;
             }
-            else if (direccion == 1 && posicionX >= 2)//izquierda
+            else if (direccion == 2 && posicionX >= 2)//izquierda
             {
                 posicionX -= 2;
                 direccionMov = direccion;
             }
-            else if (direccion == 2 && posicionY>= 2)//arriba
+            else if (direccion == 0 && posicionY>= 2)//arriba
             {
                 posicionY -= 2;
                 direccionMov = direccion;
@@ -74,7 +74,7 @@ namespace Entrega3
 
         public override bool AfinidadBitmons(Bitmon bitmon)
         {
-            if(bitmon.Especie() == "🌵" || bitmon.Especie() == "🐳")
+            if(bitmon.Especie() == "🌵" || bitmon.Especie() == "🐳" || bitmon.Especie() == "🌵")
             {
                 afin = false;
                 return afin;

@@ -57,13 +57,13 @@ namespace Entrega3
         {
             int direccion = random.Next(4);
             if (AfinidadTerreno(matrizBotones))
-                if (direccion == 0 && posicionX <= 6) // con 0 se mueve hacia la derecha
+                if (direccion == 1 && posicionX <= 6) // con 0 se mueve hacia la derecha
                 {
                     posicionX += 1;
                     direccionMov = direccion;
 
                 }
-                else if (direccion == 1 && posicionX >= 1) // con 1 se mueve hacia la izquierda
+                else if (direccion == 0 && posicionX >= 1) // con 1 se mueve hacia la izquierda
                 {
                     posicionX -= 1;
                     direccionMov = direccion;
