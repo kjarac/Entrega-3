@@ -18,10 +18,6 @@ namespace Entrega3
         public Form1()
         {
             InitializeComponent();
-
-          
-         
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -29,6 +25,7 @@ namespace Entrega3
 
             var disenioPredeterminado = new GamePredeterminado();
             disenioPredeterminado.ShowDialog();
+            Hide();
         }
             
 
@@ -37,8 +34,9 @@ namespace Entrega3
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            var disenioPersonalizado = new Game(0, 0);
+            var disenioPersonalizado = new Game();
             disenioPersonalizado.ShowDialog();
+            
         }
     }
 }

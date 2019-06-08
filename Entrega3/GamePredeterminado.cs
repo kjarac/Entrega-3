@@ -48,7 +48,6 @@ namespace Entrega3
                     button.Margin = new Padding(0, 0, 0, 0);
                     button.Padding = new Padding(0, 0, 0, 0);
                     button.FlatStyle = FlatStyle.Popup;
-                    button.Click += cell_Click;
                     button.BackColor = Color.LightGray;
                     button.FlatAppearance.BorderSize = 0;
                     tableLayoutPanel1.Controls.Add(button, columna, fila);
@@ -64,28 +63,7 @@ namespace Entrega3
 
         }
 
-        private void cell_Click(object sender, EventArgs e)
-        {
-            Button boton = (Button)sender;
-            int filaBoton = 0;
-            int columnaBoton = 0;
-
-            // Para la posición del botón
-            for (int fila = 0; fila < FILAS; fila++)
-            {
-                for (int columna = 0; columna < COLUMNAS; columna++)
-                {
-                    if (boton == matrizBotones[fila, columna])
-                    {
-                        filaBoton = fila;
-                        columnaBoton = columna;
-                        break;
-                    }
-                }
-            }
-
-
-        }
+        
         public void ModificarMapa()
         {
             for (int fila = 0; fila < FILAS; fila++)

@@ -15,15 +15,15 @@ namespace Entrega3
         TableLayoutPanel tableLayoutPanelMapa;
         int FILAS;
         int COLUMNAS;
+        
         List<Button> listaBotones;
         Button[,] matrizBotones;
-       public Game(int FILAS, int COLUMNAS)
+       public Game()
         {
             InitializeComponent();
             ConfigurarTableLayout();
-            this.FILAS = FILAS;
-            this.COLUMNAS = COLUMNAS;
-
+            
+           
             matrizBotones = new Button[FILAS, COLUMNAS];
             listaBotones = new List<Button>();
 
@@ -45,16 +45,20 @@ namespace Entrega3
                 }
             }
             
+            
         }
 
         private void ConfigurarTableLayout()
         {
             tableLayoutPanelMapa = new TableLayoutPanel();
+            int DIMENSIONES =Convert.ToInt32(numericUpDown1.Value);
+            tableLayoutPanelMapa.RowCount = DIMENSIONES;
+            tableLayoutPanelMapa.ColumnCount = DIMENSIONES;
 
-            tableLayoutPanelMapa.RowCount = FILAS;
-            tableLayoutPanelMapa.ColumnCount = COLUMNAS;
+            FILAS = DIMENSIONES;
+            COLUMNAS = DIMENSIONES;
 
-            int tamanioBoton = (int)Math.Round(300.0 / COLUMNAS);
+            int tamanioBoton = (int)Math.Round(300.0 / DIMENSIONES);
             int tamanioTabla = tamanioBoton * COLUMNAS;
 
 

@@ -14,8 +14,8 @@ namespace Entrega3
     {
         public int cantidadDeBitmons;
         public int tiempoDeSimulacion;
-        public int FILAS;
-        public int COLUMNAS;
+    
+      
 
         public ConfiguracionInicial()
         {
@@ -28,9 +28,9 @@ namespace Entrega3
         {
             cantidadDeBitmons = Convert.ToInt32(textBox1.Text);
             tiempoDeSimulacion = Convert.ToInt32(textBox2.Text);
-            FILAS = Convert.ToInt32(textBox3.Text);
-            COLUMNAS = Convert.ToInt32(textBox4.Text);
-            ListaDeBitmons listaDeBitmons = new ListaDeBitmons(cantidadDeBitmons, FILAS, COLUMNAS);
+            
+           
+            ListaDeBitmons listaDeBitmons = new ListaDeBitmons(cantidadDeBitmons);
             listaDeBitmons.Show();
             
             Close();

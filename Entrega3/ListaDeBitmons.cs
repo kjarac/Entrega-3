@@ -15,14 +15,13 @@ namespace Entrega3
         public List<string> listaBitmons = new List<string>();
         int bitActual = 1;
         int cantidadDeBitmons;
-        int FILAS;
-        int COLUMNAS;
-        public ListaDeBitmons(int cantidadDeBitmons, int fila, int columna)
+       
+     
+        public ListaDeBitmons(int cantidadDeBitmons)
         {
             InitializeComponent();
             this.cantidadDeBitmons = cantidadDeBitmons;
-            FILAS = fila;
-            COLUMNAS = columna;
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,7 +31,7 @@ namespace Entrega3
             label1.Text = "Bitmon " + bitActual;
             if (bitActual == cantidadDeBitmons+1)
             {
-                Game game = new Game(FILAS, COLUMNAS);
+                Game game = new Game();
                 game.Show();
                 Close();
             }else if (bitActual == cantidadDeBitmons)
