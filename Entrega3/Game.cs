@@ -24,7 +24,10 @@ namespace Entrega3
             this.FILAS = FILAS;
             this.COLUMNAS = COLUMNAS;
 
-            for(int fila=0; fila<FILAS; fila++)
+            matrizBotones = new Button[FILAS, COLUMNAS];
+            listaBotones = new List<Button>();
+
+            for (int fila=0; fila<FILAS; fila++)
             {
                 for(int columna = 0; columna<COLUMNAS; columna++)
                 {
@@ -41,6 +44,7 @@ namespace Entrega3
                    
                 }
             }
+            
         }
 
         private void ConfigurarTableLayout()
@@ -64,15 +68,14 @@ namespace Entrega3
 
             tableLayoutPanelMapa.Anchor = AnchorStyles.None;
             tableLayoutPanel1.Controls.Add(tableLayoutPanelMapa, 0, 1);
-
-
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Form config = new ConfiguracionInicial();
-            config.Show();
             Hide();
+            config.Show();
+           
         }
     }
 }

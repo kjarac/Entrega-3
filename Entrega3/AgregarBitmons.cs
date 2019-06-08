@@ -101,6 +101,8 @@ namespace Entrega3
                 }
             return bitmons;
         }
+
+
         
         /*
         public void SumarStrings()

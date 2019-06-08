@@ -32,14 +32,16 @@ namespace Entrega3
             label1.Text = "Bitmon " + bitActual;
             if (bitActual == cantidadDeBitmons+1)
             {
+                Game game = new Game(FILAS, COLUMNAS);
+                game.Show();
                 Close();
             }else if (bitActual == cantidadDeBitmons)
             {
                 button1.Text = "Guardar";
-                Game game = new Game(FILAS, COLUMNAS);
-                game.Show();
-                Close();
+
             }
+
+            
         }
     }
 }

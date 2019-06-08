@@ -22,7 +22,7 @@ namespace Entrega3
             InitializeComponent();
         }
 
-        
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -30,8 +30,10 @@ namespace Entrega3
             tiempoDeSimulacion = Convert.ToInt32(textBox2.Text);
             FILAS = Convert.ToInt32(textBox3.Text);
             COLUMNAS = Convert.ToInt32(textBox4.Text);
-            ListaDeBitmons listaDeBitmons = new ListaDeBitmons(cantidadDeBitmons,FILAS,COLUMNAS);
+            ListaDeBitmons listaDeBitmons = new ListaDeBitmons(cantidadDeBitmons, FILAS, COLUMNAS);
             listaDeBitmons.Show();
+            
+            Close();
 
 
         }
