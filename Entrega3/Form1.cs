@@ -133,12 +133,21 @@ namespace Entrega3
             ModificarMapa();
             if (time % 3 == 0)
             {
-
-
-                Ent ent = new Ent(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
-                hayBitmon[fila, columna] = true;
-                matrizBotones[fila, columna].Text = ent.Especie();
-                listaBitmons.Add(ent);
+                while (true) {
+                    if (matrizBotones[fila, columna].Text == "")
+                    {
+                        Ent ent = new Ent(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
+                        hayBitmon[fila, columna] = true;
+                        matrizBotones[fila, columna].Text = ent.Especie();
+                        listaBitmons.Add(ent);
+                        break;
+                    }
+                    else
+                    {
+                        fila = random.Next(FILAS);
+                        columna = random.Next(COLUMNAS);
+                    }
+                }
             }
             List<Bitmon> aux = new List<Bitmon>();
             aux = listaBitmons;
@@ -150,11 +159,11 @@ namespace Entrega3
             {
                 foreach (Bitmon bits in listaBitmons)
                 {
-                    if(crearBitmon && bit!=bits)
+                    if( a!=b)
                     {
                         if (bit.PosicionX() == bits.PosicionX() && bit.PosicionY() == bits.PosicionY())
                         {
-                            if (bit.Especie() == bits.Especie())
+                            if (bit.AfinidadBitmons(bits))
                             {
                                 aux[a].Reproducirse();
                                 aux[b].Reproducirse();
@@ -171,7 +180,7 @@ namespace Entrega3
                                     Dorvalo dorvalo = new Dorvalo(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                                     hayBitmon[fila, columna] = true;
                                     matrizBotones[fila, columna].Text = dorvalo.Especie();
-                                    aux.Add(dorvalo);
+                                    aux2.Add(dorvalo);
                                     MessageBox.Show("Ha nacido un dorvalo");
                                 }
                                 else if (tipoBitmon == 2)
@@ -179,16 +188,16 @@ namespace Entrega3
                                     Doti doti = new Doti(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                                     hayBitmon[fila, columna] = true;
                                     matrizBotones[fila, columna].Text = doti.Especie();
-                                    aux.Add(doti);
+                                    aux2.Add(doti);
                                     MessageBox.Show("Ha nacido un doti");
 
                                 }
-                                else if (tipoBitmon == 3 || (matrizBotones[fila, columna].BackColor != Color.Red && matrizBotones[fila, columna].BackColor != Color.Brown))
+                                else if (tipoBitmon == 3 && (matrizBotones[fila, columna].BackColor != Color.Red && matrizBotones[fila, columna].BackColor != Color.Brown))
                                 {
                                     Ent ent2 = new Ent(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                                     hayBitmon[fila, columna] = true;
                                     matrizBotones[fila, columna].Text = ent2.Especie();
-                                    aux.Add(ent2);
+                                    aux2.Add(ent2);
                                     MessageBox.Show("Ha nacido un ent");
                                 }
                                 else if (tipoBitmon == 4)
@@ -196,7 +205,7 @@ namespace Entrega3
                                     Gofue gofue = new Gofue(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                                     hayBitmon[fila, columna] = true;
                                     matrizBotones[fila, columna].Text = gofue.Especie();
-                                    aux.Add(gofue);
+                                    aux2.Add(gofue);
                                     MessageBox.Show("Ha nacido un gofue");
                                 }
                                 else if (tipoBitmon == 5 && matrizBotones[fila, columna].BackColor == Color.Aqua)
@@ -204,7 +213,7 @@ namespace Entrega3
                                     Wetar wetar = new Wetar(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                                     hayBitmon[fila, columna] = true;
                                     matrizBotones[fila, columna].Text = wetar.Especie();
-                                    aux.Add(wetar);
+                                    aux2.Add(wetar);
                                     MessageBox.Show("Ha nacido un dorvalo");
                                 }
                                 else
@@ -212,10 +221,9 @@ namespace Entrega3
                                     Taplan taplan = new Taplan(tiempoDeVida, puntosDeVida, puntosDeAtaque, cantidadDeHijos, fila, columna);
                                     hayBitmon[fila, columna] = true;
                                     matrizBotones[fila, columna].Text = taplan.Especie();
-                                    aux.Add(taplan);
+                                    aux2.Add(taplan);
                                     MessageBox.Show("Ha nacido un taplan");
                                 }
-                                crearBitmon = false;
                             }
                             else
                             {
@@ -239,6 +247,10 @@ namespace Entrega3
                     }
                 a++;
                 break;
+            }
+            foreach(Bitmon bit in aux2)
+            {
+                aux.Add(bit);
             }
             foreach(Bitmon bit in bithalla)
             {

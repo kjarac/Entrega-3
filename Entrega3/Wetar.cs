@@ -85,19 +85,19 @@ namespace Entrega3
 
                 int direccion = random.Next(4);
             if(AfinidadTerreno(matrizBotones))
-                if (direccion == 0 && posicionX<=6) // con 0 se mueve hacia la derecha
+                if (direccion == 1 && posicionX<=6) // con 0 se mueve hacia la derecha
                 {
                     posicionX += 1;
                     direccionMov = direccion;
                     
                 }
-                else if (direccion == 1 && posicionX>=1) // con 1 se mueve hacia la izquierda
+                else if (direccion == 2 && posicionX>=1) // con 1 se mueve hacia la izquierda
                 {
                     posicionX -= 1;
                     direccionMov = direccion;
 
                 }
-                else if (direccion == 2 && posicionY >=1) //con 2 se mueve hacia arriba
+                else if (direccion == 0 && posicionY >=1) //con 2 se mueve hacia arriba
                 {
                     posicionY -= 1;
                     direccionMov = direccion;
@@ -113,7 +113,7 @@ namespace Entrega3
 
         public override bool AfinidadBitmons(Bitmon bitmon)
         {
-            if(bitmon.Especie() == "🐉" || bitmon.Especie() == "🐍")
+            if(bitmon.Especie() == "🐉" || bitmon.Especie() == "🐍" || bitmon.Especie() == "🌵")
             {
                 afin = false;
                 return afin;
