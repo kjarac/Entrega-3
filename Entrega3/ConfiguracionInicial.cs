@@ -14,24 +14,25 @@ namespace Entrega3
     {
         public int cantidadDeBitmons;
         public int tiempoDeSimulacion;
+        public int FILAS;
+        public int COLUMNAS;
 
         public ConfiguracionInicial()
         {
             InitializeComponent();
         }
 
-        private void ConfiguracionInicial_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
             cantidadDeBitmons = Convert.ToInt32(textBox1.Text);
             tiempoDeSimulacion = Convert.ToInt32(textBox2.Text);
-            ListaDeBitmons listaDeBitmons = new ListaDeBitmons(cantidadDeBitmons);
+            FILAS = Convert.ToInt32(textBox3.Text);
+            COLUMNAS = Convert.ToInt32(textBox4.Text);
+            ListaDeBitmons listaDeBitmons = new ListaDeBitmons(cantidadDeBitmons,FILAS,COLUMNAS);
             listaDeBitmons.Show();
-            Close();
+
 
         }
     }
