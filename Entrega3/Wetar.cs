@@ -82,9 +82,7 @@ namespace Entrega3
         }
        public override void Desplazamiento(Button[,] matrizBotones) 
         {
-            
-            
-            
+
                 int direccion = random.Next(4);
             if(AfinidadTerreno(matrizBotones))
                 if (direccion == 0 && posicionX<=6) // con 0 se mueve hacia la derecha

@@ -53,7 +53,7 @@ namespace Entrega3
 
 
             int direccion = random.Next(4);
-                if (direccion == 0 && posicionX <= 7) // con 0 se mueve hacia la derecha
+                if (direccion == 0 && posicionX <= 6) // con 0 se mueve hacia la derecha
                 {
                     posicionX += 1;
                     direccionMov = direccion;
@@ -70,7 +70,7 @@ namespace Entrega3
                     posicionY -= 1;
                     direccionMov = direccion;
                 }
-                else if (direccion == 3 && posicionY <= 7)// con 3 se mueve hacia abajo            
+                else if (direccion == 3 && posicionY <= 6)// con 3 se mueve hacia abajo            
                 {
                     posicionY += 1;
                     direccionMov = direccion;

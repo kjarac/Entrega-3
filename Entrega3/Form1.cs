@@ -142,23 +142,22 @@ namespace Entrega3
             }
             List<Bitmon> aux = new List<Bitmon>();
             aux = listaBitmons;
+            List<Bitmon> aux2 = new List<Bitmon>();
             int a = 0;
             int b = 0;
             bool crearBitmon = true;
             foreach (Bitmon bit in listaBitmons)
             {
-                a++;
                 foreach (Bitmon bits in listaBitmons)
                 {
-                    b++;
                     if(crearBitmon && bit!=bits)
                     {
                         if (bit.PosicionX() == bits.PosicionX() && bit.PosicionY() == bits.PosicionY())
                         {
                             if (bit.Especie() == bits.Especie())
                             {
-                                bit.Reproducirse();
-                                bits.Reproducirse();
+                                aux[a].Reproducirse();
+                                aux[b].Reproducirse();
                                 fila = random.Next(FILAS);
                                 columna = random.Next(COLUMNAS);
                                 existeUnBitmon = hayBitmon[fila, columna];
@@ -220,26 +219,30 @@ namespace Entrega3
                             }
                             else
                             {
-                                bit.ReducirPuntosDeVida(bits.Daño(bit));
-                                bits.ReducirPuntosDeVida(bit.Daño(bit));
+                                aux[a].ReducirPuntosDeVida(bits.Daño(bit));
+                                aux[b].ReducirPuntosDeVida(bit.Daño(bits));
                                 MessageBox.Show(bit.Especie() + " v/s " + bits.Especie());
                                 if (bit.Muere())
                                 {
                                     bithalla.Add(bit);
-                                    aux.Remove(bit);
                                     MessageBox.Show("Ha muerto un " + bit.Especie());
                                 } else if (bits.Muere())
                                 {
                                     bithalla.Add(bits);
-                                    aux.Remove(bits);
                                     MessageBox.Show("Ha muerto un " + bits.Especie());
                                 }
 
                             }
                         }
                     }
+                    b++;
                     }
+                a++;
                 break;
+            }
+            foreach(Bitmon bit in bithalla)
+            {
+                aux.Remove(bit);
             }
             listaBitmons = aux;
         }

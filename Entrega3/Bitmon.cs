@@ -10,6 +10,7 @@ namespace Entrega3
 {
     abstract class Bitmon
     {
+        protected Random random = new Random();
         protected int tiempoDeVida;
         protected int puntosDeVida;
         protected int puntosDeAtaque;

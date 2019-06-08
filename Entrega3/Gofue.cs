@@ -49,9 +49,6 @@ namespace Entrega3
         }
        public override void Desplazamiento(Button[,] matrizBotones)
         {
-            Random random = new Random();
-
-
             int direccion = random.Next(4);
                 if (direccion == 0 && posicionX <= 6) // con 0 se mueve hacia la derecha
                 {
