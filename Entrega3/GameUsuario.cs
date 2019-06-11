@@ -10,35 +10,28 @@ using System.Windows.Forms;
 
 namespace Entrega3
 {
-    public partial class Game : Form
+    public partial class GameUsuario : Form
     {
+
         private int FILAS;
         private int COLUMNAS;
 
         List<Button> listaBotones;
         Button[,] matrizBotones;
         TableLayoutPanel mapa;
-        // int DIMENSIONES;
 
-        public Game()
+        public GameUsuario()
         {
             InitializeComponent();
             configurarTableLayout();
-
-
         }
 
-
-
-
-        private void button4_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
-
             matrizBotones = new Button[FILAS, COLUMNAS];
             listaBotones = new List<Button>();
 
-           
+            // Agregaremos los botones con código, para no hacerlo 1 a 1...
             for (int fila = 0; fila < FILAS; fila++)
             {
                 for (int columna = 0; columna < COLUMNAS; columna++)
@@ -66,13 +59,18 @@ namespace Entrega3
             //int DIMENSIONES = Convert.ToInt32(Math.Round(numericUpDown1.Value,0));
             int DIMENSIONES = 15;
 
-   
+            // Modificamos las filas y columnas del tableLayout
             mapa.RowCount = DIMENSIONES;
             mapa.ColumnCount = DIMENSIONES;
 
+            // Estas constantes es para que sea más fácil de leer el código solamente
             FILAS = DIMENSIONES;
             COLUMNAS = DIMENSIONES;
 
+            // Quiero que sea de más o menos 300x300
+            // Hago esto para que el tamaño de todos los botones sea el mismo.
+            // WindowsForms hace algo raro con la última columna y última fila
+            // cuando estos valores no calzan bien...
             int tamanoBoton = (int)Math.Round(300.0 / DIMENSIONES);
             int tamanoTabla = tamanoBoton * DIMENSIONES;
 
@@ -84,19 +82,10 @@ namespace Entrega3
 
             mapa.Size = new Size(tamanoTabla, tamanoTabla);
 
-            //centra el mapa
+            // Lo siguiente centra la tabla
             mapa.Anchor = AnchorStyles.None;
 
             tableLayoutPanel1.Controls.Add(mapa, 0, 1);
         }
-
-        /*private void button3_Click(object sender, EventArgs e)
-    {
-        Form config = new ConfiguracionInicial();
-        Hide();
-        config.Show();
-
-    }*/
-
     }
 }

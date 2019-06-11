@@ -33,11 +33,12 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.button4 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +60,7 @@
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.Controls.Add(this.numericUpDown1);
+            this.flowLayoutPanel1.Controls.Add(this.button4);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 327);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(786, 123);
@@ -72,7 +74,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Configuración inicial";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+       
             // 
             // button1
             // 
@@ -91,6 +93,13 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Estadísticas";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(477, 3);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown1.TabIndex = 3;
             // 
             // label1
             // 
@@ -124,12 +133,15 @@
             this.textBox2.Size = new System.Drawing.Size(48, 20);
             this.textBox2.TabIndex = 5;
             // 
-            // numericUpDown1
+            // button4
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(477, 3);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 3;
+            this.button4.Location = new System.Drawing.Point(603, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(111, 56);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Iniciar";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Game
             // 
@@ -163,5 +175,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Button button4;
     }
 }

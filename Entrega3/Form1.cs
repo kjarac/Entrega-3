@@ -23,7 +23,7 @@ namespace Entrega3
         private void button2_Click(object sender, EventArgs e)
         {
 
-            var disenioPredeterminado = new GamePredeterminado();
+            GamePredeterminado disenioPredeterminado = new GamePredeterminado();
             disenioPredeterminado.ShowDialog();
             Hide();
         }
@@ -34,7 +34,7 @@ namespace Entrega3
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            var disenioPersonalizado = new Game();
+            GameUsuario disenioPersonalizado = new GameUsuario();
             disenioPersonalizado.ShowDialog();
             
         }

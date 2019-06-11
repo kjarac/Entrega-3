@@ -48,3 +48,4 @@ C:\Users\usuario\Desktop\Laboratorio3\entrega-3\Entrega3\obj\Debug\Entrega3.exe
 C:\Users\usuario\Desktop\Laboratorio3\entrega-3\Entrega3\obj\Debug\Entrega3.pdb
 C:\Users\Katherine Jara\Desktop\Entrega-3\Entrega3\obj\Debug\Entrega3.Game.resources
 C:\Users\Katherine Jara\Desktop\Entrega-3\Entrega3\obj\Debug\Entrega3.GamePredeterminado.resources
+C:\Users\Katherine Jara\Desktop\Entrega-3\Entrega3\obj\Debug\Entrega3.GameUsuario.resources
