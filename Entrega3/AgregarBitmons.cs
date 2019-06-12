@@ -10,6 +10,7 @@ namespace Entrega3
 {
     class AgregarBitmons
     {
+        Random random = new Random();
         List<Bitmon> bitmons = new List<Bitmon>();
         public List<Bitmon> GetBitmons()
         {
@@ -22,20 +23,17 @@ namespace Entrega3
                     hayBitmon[fila, columna] = false;
 
             // Se crea el terreno para cada celda, al azar
-            Random random = new Random();
-            int cantidadB = 0;
-            while (cantidadB < listaBitmon.Count)
-            {
                 List<Bitmon> bitmons = new List<Bitmon>();
-                int fila = random.Next(FILAS);
-                int columna = random.Next(COLUMNAS);
-                bool existeUnBitmon = hayBitmon[fila, columna];
-                int tiempoDeVida = random.Next(1, 6);
-                int puntosDeVida = random.Next(10, 250);
-                int puntosDeAtaque = random.Next(30, 101);
+
                 int cantidadDeHijos = 0;
                 foreach (string bit in listaBitmon)
                 {
+                    int fila = random.Next(FILAS);
+                    int columna = random.Next(COLUMNAS);
+                    bool existeUnBitmon = hayBitmon[fila, columna];
+                    int tiempoDeVida = random.Next(1, 6);
+                    int puntosDeVida = random.Next(10, 250);
+                    int puntosDeAtaque = random.Next(30, 101);
                     if (!existeUnBitmon)
                     {
                         if (bit == "🦅")
@@ -84,9 +82,8 @@ namespace Entrega3
                             bitmons.Add(taplan);
                         }
 
-                        cantidadB++;
 
-                    }
+                    
                 }
 
 
