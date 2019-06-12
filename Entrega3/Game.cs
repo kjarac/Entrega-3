@@ -59,6 +59,17 @@ namespace Entrega3
             hayBitmon = new bool[FILAS, COLUMNAS];
             configurarTableLayout();
 
+            if (listaTipoBitmons==null || listaBitmons == null)
+            {
+                button1.Hide();
+                button2.Hide();
+                button4.Hide();
+            }
+            else
+            {
+
+                button4.Show();
+            }
         }
 
 
@@ -66,6 +77,8 @@ namespace Entrega3
 
         private void button4_Click(object sender, EventArgs e)
         {
+            button1.Show();
+            button2.Show();
             FILAS = dimensiones;
             COLUMNAS = dimensiones;
             CELDAS = dimensiones * dimensiones;
@@ -134,6 +147,7 @@ namespace Entrega3
             Form config = new ConfiguracionInicial();
             Hide();
             config.Show();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -311,6 +325,11 @@ namespace Entrega3
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }
