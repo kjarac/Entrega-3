@@ -33,14 +33,16 @@ namespace Entrega3
 
         public Game(List<string> listaBitmons, int dimensiones, int tiempoDeSimulacion)
         {
-            InitializeComponent();
-            configurarTableLayout();
             this.listaBitmons = listaBitmons;
             this.dimensiones = dimensiones;
             this.tiempoDeSimulacion = tiempoDeSimulacion;
+            InitializeComponent();
+            FILAS = dimensiones;
+            COLUMNAS = dimensiones;
             matrizBotones = new Button[FILAS, COLUMNAS];
             terreno = new bool[FILAS, COLUMNAS];
             hayBitmon = new bool[FILAS, COLUMNAS];
+            configurarTableLayout();
 
         }
 
@@ -81,10 +83,7 @@ namespace Entrega3
         private void configurarTableLayout()
         {
             mapa = new TableLayoutPanel();
-
-            //int DIMENSIONES = Convert.ToInt32(Math.Round(numericUpDown1.Value, 0));
-            //int DIMENSIONES = Convert.ToInt32(Math.Round(numericUpDown1.Value,0));
-            int DIMENSIONES = 15;
+            int DIMENSIONES = dimensiones;
 
    
             mapa.RowCount = DIMENSIONES;
@@ -122,13 +121,6 @@ namespace Entrega3
             config.Show();
         }
 
-        /*private void button3_Click(object sender, EventArgs e)
-    {
-        Form config = new ConfiguracionInicial();
-        Hide();
-        config.Show();
-
-    }*/
 
     }
 }
