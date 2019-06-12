@@ -10,7 +10,16 @@ namespace Entrega3
 {
     class Gofue : Bitmon
     {
-        
+        public Gofue(int tiempoDeVida, int puntosDeVida, int puntosDeAtaque, int cantidadDeHijos, int posicionX, int posicionY)
+        {
+            this.tiempoDeVida = tiempoDeVida;
+            this.puntosDeVida = puntosDeVida;
+            this.puntosDeAtaque = puntosDeAtaque;
+            especie = "🐉";
+            this.cantidadDeHijos = cantidadDeHijos;
+            this.posicionX = posicionX;
+            this.posicionY = posicionY;
+        }
         public override void CambioTerreno(Button[,] matrizBotones)
         {
             if (afin)
@@ -25,16 +34,7 @@ namespace Entrega3
                 }
             }
         }
-        public Gofue(int tiempoDeVida, int puntosDeVida, int puntosDeAtaque, int cantidadDeHijos, int posicionX, int posicionY)
-        {
-            this.tiempoDeVida = tiempoDeVida;
-            this.puntosDeVida = puntosDeVida;
-            this.puntosDeAtaque = puntosDeAtaque;
-            especie = "🐉";
-            this.cantidadDeHijos = cantidadDeHijos;
-            this.posicionX = posicionX;
-            this.posicionY = posicionY;
-        }
+       
 
         public override int Daño(Bitmon bitmon)
         {

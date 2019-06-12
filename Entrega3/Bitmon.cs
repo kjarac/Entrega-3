@@ -14,12 +14,13 @@ namespace Entrega3
         protected int tiempoDeVida;
         protected int puntosDeVida;
         protected int puntosDeAtaque;
-        protected string especie;
         protected int cantidadDeHijos;
         protected int posicionX;
         protected int posicionY;
         protected int direccionMov;
+        protected string especie;
         protected bool afin;
+
         public abstract bool AfinidadBitmons(Bitmon bitmon);
         public abstract void CambioTerreno(Button[,] matrizBotones);
 
@@ -73,7 +74,10 @@ namespace Entrega3
         {
             return tiempoDeVida;
         }
-
+        public void SumarPuntosDeVida(int vida)
+        {
+            puntosDeVida += vida;
+        }
         public int ObtenerAtaque()
         {
             return puntosDeAtaque;

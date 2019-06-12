@@ -24,7 +24,6 @@ namespace Entrega3
 
         private void button2_Click(object sender, EventArgs e)
         {
-
             GamePredeterminado disenioPredeterminado = new GamePredeterminado();
             disenioPredeterminado.ShowDialog();
             Hide();
@@ -37,8 +36,7 @@ namespace Entrega3
         private void button1_Click_1(object sender, EventArgs e)
         {
             Game disenioPersonalizado = new Game(listaBitmons, dimensiones, tiempoDeSimulacion);
-            disenioPersonalizado.ShowDialog();
-            
+            disenioPersonalizado.ShowDialog();    
         }
     }
 }

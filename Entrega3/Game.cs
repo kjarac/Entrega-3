@@ -31,7 +31,14 @@ namespace Entrega3
         List<Bitmon> listaTipoBitmons = new List<Bitmon>();
         List<Bitmon> BitmonsNacidos = new List<Bitmon>();
 
-       
+        int wetar1 = 0;
+        int dorvalo1 = 0;
+        int doti1 = 0;
+        int ent1 = 0;
+        int gofue1 = 0;
+        int taplan1 = 0;
+
+
         int tiempoVidaBitmons;
         int CantBitmons;
         int tiempoVidaWetar, tiempoVidaDoti, tiempoVidaDorvalo, tiempoVidaGofue, tiempoVidaTaplan, tiempoVidaEnt;
@@ -210,10 +217,45 @@ namespace Entrega3
 
 
             }
+        
+            // 1 año
             if (time % 12 == 0)
             {
-                anio += 1;
-                listaBitmons.Count();
+                foreach (Bitmon bitmon in listaTipoBitmons)
+                {
+                    if (bitmon.Especie() == "🐳")
+                    {
+                        wetar1 += 1;
+
+                    }
+                    else if (bitmon.Especie() == "🐍")
+                    {
+                        taplan1 += 1;
+
+                    }
+                    else if (bitmon.Especie() == "🐉")
+                    {
+                        gofue1 += 1;
+
+                    }
+                    else if (bitmon.Especie() == "🌵")
+                    {
+                        ent1 += 1;
+
+                    }
+                    else if (bitmon.Especie() == "🦄")
+                    {
+                        doti1 += 1;
+
+                    }
+                    else
+                    {
+                        dorvalo1 += 1;
+
+                    }
+
+                }
+
 
             }
             List<Bitmon> aux = new List<Bitmon>();
@@ -295,18 +337,21 @@ namespace Entrega3
                             }
                             else
                             {
+                                MessageBox.Show(bit.Especie() + " v/s " + bits.Especie());
                                 aux[a].ReducirPuntosDeVida(bits.Daño(bit));
                                 aux[b].ReducirPuntosDeVida(bit.Daño(bits));
-                                MessageBox.Show(bit.Especie() + " v/s " + bits.Especie());
+                                
                                 if (bit.Muere())
                                 {
                                     bithalla.Add(bit);
                                     MessageBox.Show("Ha muerto un " + bit.Especie());
+                                    bits.SumarPuntosDeVida(bit.Daño(bits));
                                 }
                                 else if (bits.Muere())
                                 {
                                     bithalla.Add(bits);
                                     MessageBox.Show("Ha muerto un " + bits.Especie());
+                                    bit.SumarPuntosDeVida(bits.Daño(bit));
                                 }
 
                             }
@@ -341,12 +386,12 @@ namespace Entrega3
         private void button2_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Bitmons muertos: " + bithalla.Count);
-            int wetar = 0, wetar1 = 0, wetarD = 0, wetarN = 0;
-            int dorvalo = 0, dorvalo1 = 0, dorvaloD = 0, dorvaloN = 0;
-            int doti = 0, doti1 = 0, dotiD = 0, dotiN = 0;
-            int ent = 0, ent1 = 0, entD = 0, entN = 0;
-            int gofue = 0, gofue1 = 0, gofueD = 0, gofueN = 0;
-            int taplan = 0, taplan1 = 0, taplanD = 0, taplanN = 0;
+            int wetar = 0,  wetarD = 0, wetarN = 0;
+            int dorvalo = 0, dorvaloD = 0, dorvaloN = 0;
+            int doti = 0,  dotiD = 0, dotiN = 0;
+            int ent = 0,  entD = 0, entN = 0;
+            int gofue = 0,  gofueD = 0, gofueN = 0;
+            int taplan = 0,  taplanD = 0, taplanN = 0;
             string wetarM = "", dorvaloM = "", dotiM = "", entM = "", gofueM = "", taplanM = "";
 
             foreach (Bitmon bit in listaTipoBitmons)
@@ -400,46 +445,7 @@ namespace Entrega3
                 }
 
             }
-            // 1 año
-            if (time % 12 == 0)
-            {
-                foreach (Bitmon bitmon in listaTipoBitmons)
-                {
-                    if (bitmon.Especie() == "🐳")
-                    {
-                        wetar1 += 1;
-
-                    }
-                    else if (bitmon.Especie() == "🐍")
-                    {
-                        taplan1 += 1;
-
-                    }
-                    else if (bitmon.Especie() == "🐉")
-                    {
-                        gofue1 += 1;
-
-                    }
-                    else if (bitmon.Especie() == "🌵")
-                    {
-                        ent1 += 1;
-
-                    }
-                    else if (bitmon.Especie() == "🦄")
-                    {
-                        doti1 += 1;
-
-                    }
-                    else
-                    {
-                        dorvalo1 += 1;
-
-                    }
-
-                }
-
-
-            }
+          
             foreach (Bitmon bitmonM in listaTipoBitmons)
             {
 
@@ -541,7 +547,7 @@ namespace Entrega3
                 }
                 else
                 {
-                    dorvalo1 += 1;
+                    dorvaloN += 1;
 
                 }
             }
@@ -566,7 +572,7 @@ namespace Entrega3
             if (dorvalo != 0)
             {
                 MessageBox.Show("Tiempo de vida promedio de Dorvalo: " + tiempoVidaDorvalo / dorvalo);
-                MessageBox.Show("Tiempo de vida promedio de Dorvalo: " + wetarN / dorvalo);
+                MessageBox.Show("Cantidad de hijos promedio:" + dorvaloN / dorvalo);
                 MessageBox.Show("Tasa bruta de Natalidad de Dorvalo: " + (dorvalo1 / dorvalo) * 1000);
                 MessageBox.Show("Tasa bruta de Mortalidad de Dorvalo: " + (dorvaloD / dorvalo) * 100);
             }
@@ -574,14 +580,14 @@ namespace Entrega3
             if (taplan != 0)
             {
                 MessageBox.Show("Tiempo de vida promedio de Taplan: " + tiempoVidaTaplan / taplan);
-                MessageBox.Show("Tiempo de vida promedio de Taplan: " + taplanN / taplan);
+                MessageBox.Show("Cantidad de hijos promedio: " + taplanN / taplan);
                 MessageBox.Show("Tasa bruta de Natalidad de Taplan: " + (taplan1 / taplan) * 1000);
                 MessageBox.Show("Tasa bruta de Mortalidad de Taplan: " + (taplanD / taplan) * 100);
             }
             if (gofue != 0)
             {
                 MessageBox.Show("Tiempo de vida promedio de Gofue: " + tiempoVidaGofue / gofue);
-                MessageBox.Show("Tiempo de vida promedio de Gofue: " + gofueN / gofue);
+                MessageBox.Show("Cantidad de hijos promedio: " + gofueN / gofue);
                 MessageBox.Show("Tasa bruta de Natalidad de Gofue: " + (gofue1 / gofue) * 1000);
                 MessageBox.Show("Tasa bruta de Mortalidad de Gofue: " + (gofueD / gofue) * 100);
             }
@@ -589,7 +595,7 @@ namespace Entrega3
             if (ent != 0)
             {
                 MessageBox.Show("Tiempo de vida promedio de Ent: " + tiempoVidaEnt / ent);
-                MessageBox.Show("Tiempo de vida promedio de Ent: " + entN / ent);
+                MessageBox.Show("Cantidad de hijos promedio: " + entN / ent);
                 MessageBox.Show("Tasa bruta de Natalidad de Ent: " + (ent1 / ent) * 1000);
                 MessageBox.Show("Tasa bruta de Mortalidad de Ent: " + (entD / ent) * 100);
             }
@@ -597,7 +603,7 @@ namespace Entrega3
             if (doti != 0)
             {
                 MessageBox.Show("Tiempo de vida promedio de Doti: " + tiempoVidaDoti / doti);
-                MessageBox.Show("Tiempo de vida promedio de Doti: " + dotiN / doti);
+                MessageBox.Show("Cantidad de hijos promedio: " + dotiN / doti);
                 MessageBox.Show("Tasa bruta de Natalidad de Doti: " + (doti1 / doti) * 1000);
                 MessageBox.Show("Tasa bruta de Mortalidad de Doti: " + (dotiD / doti) * 100);
             }
