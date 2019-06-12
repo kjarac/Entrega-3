@@ -90,7 +90,7 @@ namespace Entrega3
 
             label3.Text = "Mes " + time;
             label2.Text = "Cantidad de bitmons: " + listaBitmons.Count;
-            label5.Text = "año" + anio;
+    
             Random random = new Random();
             int fila = random.Next(FILAS);
             int columna = random.Next(COLUMNAS);

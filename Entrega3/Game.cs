@@ -178,9 +178,7 @@ namespace Entrega3
             }
             label2.Text = "Mes :" + time;
             label1.Text = "Cantidad de Bitmons: " + listaTipoBitmons.Count;
-            /*label3.Text = "Mes " + time;
-            label2.Text = "Cantidad de bitmons: " + listaBitmons.Count;
-            label5.Text = "año" + anio;*/
+           
             Random random = new Random();
             int fila = random.Next(FILAS);
             int columna = random.Next(COLUMNAS);
@@ -220,7 +218,7 @@ namespace Entrega3
         
             // 1 año
             if (time % 12 == 0)
-            {
+            {   
                 foreach (Bitmon bitmon in listaTipoBitmons)
                 {
                     if (bitmon.Especie() == "🐳")
@@ -253,8 +251,8 @@ namespace Entrega3
                         dorvalo1 += 1;
 
                     }
-
                 }
+                anio++;
 
 
             }
@@ -373,15 +371,6 @@ namespace Entrega3
             listaTipoBitmons = aux;
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {

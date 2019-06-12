@@ -118,7 +118,7 @@
             this.label1.Size = new System.Drawing.Size(139, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Cantidad de Bitmon: ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+       
             // 
             // label2
             // 
@@ -129,7 +129,7 @@
             this.label2.Size = new System.Drawing.Size(42, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Mes: ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+
             // 
             // Game
             // 

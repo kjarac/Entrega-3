@@ -27,8 +27,8 @@ namespace Entrega3
         private void button1_Click(object sender, EventArgs e)
         {
             cantidadDeBitmons = Convert.ToInt32(textBox1.Text);
-            tiempoDeSimulacion = Convert.ToInt32(textBox2.Text);
-            dimensiones = Convert.ToInt32(textBox3.Text);
+            tiempoDeSimulacion = Convert.ToInt32(textBox3.Text);
+            dimensiones = Convert.ToInt32(textBox2.Text);
            
             ListaDeBitmons listaDeBitmons = new ListaDeBitmons(cantidadDeBitmons, tiempoDeSimulacion,dimensiones);
             listaDeBitmons.Show();
