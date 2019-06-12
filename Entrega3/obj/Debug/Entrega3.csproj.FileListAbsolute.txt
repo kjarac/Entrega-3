@@ -53,7 +53,6 @@ C:\Users\usuario\Desktop\ING\POO\Proyecto Final\Entrega-3\Entrega3\bin\Debug\Ent
 C:\Users\usuario\Desktop\ING\POO\Proyecto Final\Entrega-3\Entrega3\bin\Debug\Entrega3.pdb
 C:\Users\usuario\Desktop\ING\POO\Proyecto Final\Entrega-3\Entrega3\obj\Debug\Entrega3.csprojAssemblyReference.cache
 C:\Users\usuario\Desktop\ING\POO\Proyecto Final\Entrega-3\Entrega3\obj\Debug\Entrega3.ConfiguracionInicial.resources
-C:\Users\usuario\Desktop\ING\POO\Proyecto Final\Entrega-3\Entrega3\obj\Debug\Entrega3.Estadisticas.resources
 C:\Users\usuario\Desktop\ING\POO\Proyecto Final\Entrega-3\Entrega3\obj\Debug\Entrega3.Form1.resources
 C:\Users\usuario\Desktop\ING\POO\Proyecto Final\Entrega-3\Entrega3\obj\Debug\Entrega3.Game.resources
 C:\Users\usuario\Desktop\ING\POO\Proyecto Final\Entrega-3\Entrega3\obj\Debug\Entrega3.GamePredeterminado.resources
@@ -63,3 +62,17 @@ C:\Users\usuario\Desktop\ING\POO\Proyecto Final\Entrega-3\Entrega3\obj\Debug\Ent
 C:\Users\usuario\Desktop\ING\POO\Proyecto Final\Entrega-3\Entrega3\obj\Debug\Entrega3.csproj.CoreCompileInputs.cache
 C:\Users\usuario\Desktop\ING\POO\Proyecto Final\Entrega-3\Entrega3\obj\Debug\Entrega3.exe
 C:\Users\usuario\Desktop\ING\POO\Proyecto Final\Entrega-3\Entrega3\obj\Debug\Entrega3.pdb
+C:\Users\usuario\Desktop\ING\POO\Laboratorio1\Entrega-3\Entrega3\bin\Debug\Entrega3.exe.config
+C:\Users\usuario\Desktop\ING\POO\Laboratorio1\Entrega-3\Entrega3\bin\Debug\Entrega3.exe
+C:\Users\usuario\Desktop\ING\POO\Laboratorio1\Entrega-3\Entrega3\bin\Debug\Entrega3.pdb
+C:\Users\usuario\Desktop\ING\POO\Laboratorio1\Entrega-3\Entrega3\obj\Debug\Entrega3.csprojAssemblyReference.cache
+C:\Users\usuario\Desktop\ING\POO\Laboratorio1\Entrega-3\Entrega3\obj\Debug\Entrega3.ConfiguracionInicial.resources
+C:\Users\usuario\Desktop\ING\POO\Laboratorio1\Entrega-3\Entrega3\obj\Debug\Entrega3.Form1.resources
+C:\Users\usuario\Desktop\ING\POO\Laboratorio1\Entrega-3\Entrega3\obj\Debug\Entrega3.Game.resources
+C:\Users\usuario\Desktop\ING\POO\Laboratorio1\Entrega-3\Entrega3\obj\Debug\Entrega3.GamePredeterminado.resources
+C:\Users\usuario\Desktop\ING\POO\Laboratorio1\Entrega-3\Entrega3\obj\Debug\Entrega3.ListaDeBitmons.resources
+C:\Users\usuario\Desktop\ING\POO\Laboratorio1\Entrega-3\Entrega3\obj\Debug\Entrega3.Properties.Resources.resources
+C:\Users\usuario\Desktop\ING\POO\Laboratorio1\Entrega-3\Entrega3\obj\Debug\Entrega3.csproj.GenerateResource.cache
+C:\Users\usuario\Desktop\ING\POO\Laboratorio1\Entrega-3\Entrega3\obj\Debug\Entrega3.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\ING\POO\Laboratorio1\Entrega-3\Entrega3\obj\Debug\Entrega3.exe
+C:\Users\usuario\Desktop\ING\POO\Laboratorio1\Entrega-3\Entrega3\obj\Debug\Entrega3.pdb
