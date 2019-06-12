@@ -57,12 +57,6 @@
     <Compile Include="Dorvalo.cs" />
     <Compile Include="Doti.cs" />
     <Compile Include="Ent.cs" />
-    <Compile Include="Estadisticas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Estadisticas.Designer.cs">
-      <DependentUpon>Estadisticas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,9 +95,6 @@
     <Compile Include="Wetar.cs" />
     <EmbeddedResource Include="ConfiguracionInicial.resx">
       <DependentUpon>ConfiguracionInicial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Estadisticas.resx">
-      <DependentUpon>Estadisticas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

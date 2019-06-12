@@ -10,8 +10,7 @@ namespace Entrega3
 {
     class Doti : Bitmon
     {
-        bool afin;
-        int direccionMov;
+       
         public Doti(int tiempoDeVida, int puntosDeVida, int puntosDeAtaque, int cantidadDeHijos, int posicionX, int posicionY)
         {
             this.tiempoDeVida = tiempoDeVida;

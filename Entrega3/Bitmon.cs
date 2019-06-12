@@ -69,6 +69,11 @@ namespace Entrega3
             puntosDeVida -= ataque;
         }
 
+        public int TiempoDeVida()
+        {
+            return tiempoDeVida;
+        }
+
         public int ObtenerAtaque()
         {
             return puntosDeAtaque;

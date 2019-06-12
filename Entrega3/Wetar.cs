@@ -10,9 +10,6 @@ namespace Entrega3
 {
     class Wetar : Bitmon
     {
-
-
-        Random random = new Random();
         public Wetar(int tiempoDeVida, int puntosDeVida, int puntosDeAtaque, int cantidadDeHijos, int posicionX, int posicionY)
         {
             this.tiempoDeVida = tiempoDeVida;
@@ -43,22 +40,22 @@ namespace Entrega3
         }
         public  bool AfinidadTerrenoSiguiente(Button[,] matrizBotones)
         {
-            if (matrizBotones[posicionX, posicionY-1].BackColor == Color.Aqua) //arriba
+            if (matrizBotones[posicionX, posicionY-1].BackColor == Color.Aqua) 
             {
                 afin = true;
                 return afin;
             }
-            else if (matrizBotones[posicionX, posicionY +1].BackColor == Color.Aqua) //abajo
+            else if (matrizBotones[posicionX, posicionY +1].BackColor == Color.Aqua) 
             {
                 afin = true;
                 return afin;
             }
-            else if (matrizBotones[posicionX+1, posicionY ].BackColor == Color.Aqua) //derecha
+            else if (matrizBotones[posicionX+1, posicionY ].BackColor == Color.Aqua) 
             {
                 afin = true;
                 return afin;
             }
-            if (matrizBotones[posicionX-1, posicionY].BackColor == Color.Aqua) //arriba
+            if (matrizBotones[posicionX-1, posicionY].BackColor == Color.Aqua)
             {
                 afin = true;
                 return afin;
