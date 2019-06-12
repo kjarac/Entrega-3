@@ -12,7 +12,9 @@ namespace Entrega3
 {
     public partial class Form1 : Form
     {
-      
+        List<string> listaBitmons;
+        int dimensiones;
+        int tiempoDeSimulacion;
 
 
         public Form1()
@@ -34,7 +36,7 @@ namespace Entrega3
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            GameUsuario disenioPersonalizado = new GameUsuario();
+            Game disenioPersonalizado = new Game(listaBitmons, dimensiones, tiempoDeSimulacion);
             disenioPersonalizado.ShowDialog();
             
         }

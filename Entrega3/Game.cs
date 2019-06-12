@@ -14,17 +14,33 @@ namespace Entrega3
     {
         private int FILAS;
         private int COLUMNAS;
-
+        List<string> listaBitmons = new List<string>();
         List<Button> listaBotones;
         Button[,] matrizBotones;
         TableLayoutPanel mapa;
+        int dimensiones;
+        int tiempoDeSimulacion;
         // int DIMENSIONES;
+        int CELDAS;
+        List<Bitmon> bithalla = new List<Bitmon>();
+        bool[,] terreno;
+        bool[,] hayBitmon;
+        Terreno terreno1 = new Terreno();
+        AgregarBitmons addBitmon = new AgregarBitmons();
+        List<Bitmon> listaTipoBitmons = new List<Bitmon>();
 
-        public Game()
+        int time = 0;
+
+        public Game(List<string> listaBitmons, int dimensiones, int tiempoDeSimulacion)
         {
             InitializeComponent();
             configurarTableLayout();
-
+            this.listaBitmons = listaBitmons;
+            this.dimensiones = dimensiones;
+            this.tiempoDeSimulacion = tiempoDeSimulacion;
+            matrizBotones = new Button[FILAS, COLUMNAS];
+            terreno = new bool[FILAS, COLUMNAS];
+            hayBitmon = new bool[FILAS, COLUMNAS];
 
         }
 
@@ -33,8 +49,9 @@ namespace Entrega3
 
         private void button4_Click(object sender, EventArgs e)
         {
-
-
+            FILAS = dimensiones;
+            COLUMNAS = dimensiones;
+            CELDAS = dimensiones * dimensiones;
             matrizBotones = new Button[FILAS, COLUMNAS];
             listaBotones = new List<Button>();
 
@@ -56,6 +73,9 @@ namespace Entrega3
                     listaBotones.Add(button);
                 }
             }
+            terreno1.ConfiguracionTerreno(matrizBotones, terreno, CELDAS, COLUMNAS, FILAS);
+            listaTipoBitmons = addBitmon.AddListaBitmon(listaBitmons, matrizBotones, COLUMNAS, FILAS, hayBitmon);
+
         }
 
         private void configurarTableLayout()
@@ -88,6 +108,18 @@ namespace Entrega3
             mapa.Anchor = AnchorStyles.None;
 
             tableLayoutPanel1.Controls.Add(mapa, 0, 1);
+        }
+
+        private void indicadorListaBitmon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form config = new ConfiguracionInicial();
+            Hide();
+            config.Show();
         }
 
         /*private void button3_Click(object sender, EventArgs e)
