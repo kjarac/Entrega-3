@@ -14,8 +14,8 @@ namespace Entrega3
         {
            
                 // Terreno
-                for (int fila = 0; fila < FILAS; fila++)
-                    for (int columna = 0; columna < COLUMNAS; columna++)
+                for (int fila = 0; fila < FILAS-1; fila++)
+                    for (int columna = 0; columna < COLUMNAS-1; columna++)
                         terreno[fila, columna] = false;
 
                 // Se crea el terreno para cada celda, al azar

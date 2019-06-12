@@ -75,12 +75,6 @@
     <Compile Include="GamePredeterminado.Designer.cs">
       <DependentUpon>GamePredeterminado.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GameUsuario.Designer.cs">
-      <DependentUpon>GameUsuario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Gofue.cs" />
     <Compile Include="ListaDeBitmons.cs">
       <SubType>Form</SubType>
@@ -104,9 +98,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GamePredeterminado.resx">
       <DependentUpon>GamePredeterminado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GameUsuario.resx">
-      <DependentUpon>GameUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaDeBitmons.resx">
       <DependentUpon>ListaDeBitmons.cs</DependentUpon>
