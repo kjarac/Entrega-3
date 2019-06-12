@@ -12,7 +12,7 @@ namespace Entrega3
 {
     public partial class Game : Form
     {
-        int anio = 1;
+        
         private int FILAS;
         private int COLUMNAS;
         List<string> listaBitmons = new List<string>();
@@ -21,7 +21,7 @@ namespace Entrega3
         TableLayoutPanel mapa;
         int dimensiones;
         int tiempoDeSimulacion;
-        // int DIMENSIONES;
+       
         int CELDAS;
         List<Bitmon> bithalla = new List<Bitmon>();
         bool[,] terreno;
@@ -31,7 +31,16 @@ namespace Entrega3
         List<Bitmon> listaTipoBitmons = new List<Bitmon>();
         List<Bitmon> BitmonsNacidos = new List<Bitmon>();
 
+       
+        int tiempoVidaBitmons;
+        int CantBitmons;
+        int tiempoVidaWetar, tiempoVidaDoti, tiempoVidaDorvalo, tiempoVidaGofue, tiempoVidaTaplan, tiempoVidaEnt;
+
+
         int time = 0;
+        int anio = 0;
+
+       
         public void ModificarMapa()
         {
             for (int fila = 0; fila < FILAS; fila++)
@@ -331,7 +340,302 @@ namespace Entrega3
 
         private void button2_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Bitmons muertos: " + bithalla.Count);
+            int wetar = 0, wetar1 = 0, wetarD = 0, wetarN = 0;
+            int dorvalo = 0, dorvalo1 = 0, dorvaloD = 0, dorvaloN = 0;
+            int doti = 0, doti1 = 0, dotiD = 0, dotiN = 0;
+            int ent = 0, ent1 = 0, entD = 0, entN = 0;
+            int gofue = 0, gofue1 = 0, gofueD = 0, gofueN = 0;
+            int taplan = 0, taplan1 = 0, taplanD = 0, taplanN = 0;
+            string wetarM = "", dorvaloM = "", dotiM = "", entM = "", gofueM = "", taplanM = "";
 
+            foreach (Bitmon bit in listaTipoBitmons)
+            {
+                if (bit.Especie() == "🐳")
+                {
+                    wetar += 1;
+                    tiempoVidaBitmons += bit.TiempoDeVida();
+                    tiempoVidaWetar += bit.TiempoDeVida();
+                    CantBitmons += 1;
+
+                }
+                else if (bit.Especie() == "🐍")
+                {
+                    taplan += 1;
+                    tiempoVidaBitmons += bit.TiempoDeVida();
+                    tiempoVidaTaplan += bit.TiempoDeVida();
+                    CantBitmons += 1;
+                }
+                else if (bit.Especie() == "🐉")
+                {
+                    gofue += 1;
+                    tiempoVidaBitmons += bit.TiempoDeVida();
+                    tiempoVidaGofue += bit.TiempoDeVida();
+                    CantBitmons += 1;
+
+
+                }
+                else if (bit.Especie() == "🌵")
+                {
+                    ent += 1;
+                    tiempoVidaBitmons += bit.TiempoDeVida();
+                    tiempoVidaEnt += bit.TiempoDeVida();
+                    CantBitmons += 1;
+
+                }
+                else if (bit.Especie() == "🦄")
+                {
+                    doti += 1;
+                    tiempoVidaBitmons += bit.TiempoDeVida();
+                    tiempoVidaDoti += bit.TiempoDeVida();
+                    CantBitmons += 1;
+
+                }
+                else
+                {
+                    dorvalo += 1;
+                    tiempoVidaBitmons += bit.TiempoDeVida();
+                    tiempoVidaDorvalo += bit.TiempoDeVida();
+                    CantBitmons += 1;
+                }
+
+            }
+            // 1 año
+            if (time % 12 == 0)
+            {
+                foreach (Bitmon bitmon in listaTipoBitmons)
+                {
+                    if (bitmon.Especie() == "🐳")
+                    {
+                        wetar1 += 1;
+
+                    }
+                    else if (bitmon.Especie() == "🐍")
+                    {
+                        taplan1 += 1;
+
+                    }
+                    else if (bitmon.Especie() == "🐉")
+                    {
+                        gofue1 += 1;
+
+                    }
+                    else if (bitmon.Especie() == "🌵")
+                    {
+                        ent1 += 1;
+
+                    }
+                    else if (bitmon.Especie() == "🦄")
+                    {
+                        doti1 += 1;
+
+                    }
+                    else
+                    {
+                        dorvalo1 += 1;
+
+                    }
+
+                }
+
+
+            }
+            foreach (Bitmon bitmonM in listaTipoBitmons)
+            {
+
+                if (bitmonM.Especie() == "🐳")
+                {
+                    wetarM = "hay";
+
+                }
+                else if (bitmonM.Especie() == "🐍")
+                {
+                    taplanM = "hay";
+
+                }
+                else if (bitmonM.Especie() == "🐉")
+                {
+                    gofueM = "hay";
+
+                }
+                else if (bitmonM.Especie() == "🌵")
+                {
+                    entM = "hay";
+
+                }
+                else if (bitmonM.Especie() == "🦄")
+                {
+                    dotiM = "hay";
+
+                }
+                else
+                {
+                    dorvaloM = "hay";
+
+                }
+
+            }
+
+            foreach (Bitmon bitmonDie in bithalla)
+            {
+                if (bitmonDie.Especie() == "🐳")
+                {
+                    wetarD += 1;
+
+                }
+                else if (bitmonDie.Especie() == "🐍")
+                {
+                    taplanD += 1;
+
+                }
+                else if (bitmonDie.Especie() == "🐉")
+                {
+                    gofueD += 1;
+
+                }
+                else if (bitmonDie.Especie() == "🌵")
+                {
+                    entD += 1;
+
+                }
+                else if (bitmonDie.Especie() == "🦄")
+                {
+                    dotiD += 1;
+
+
+                }
+                else
+                {
+                    dorvaloD += 1;
+
+                }
+
+            }
+
+            foreach (Bitmon bitmonNacido in BitmonsNacidos)
+            {
+                if (bitmonNacido.Especie() == "🐳")
+                {
+                    wetarN += 1;
+
+                }
+                else if (bitmonNacido.Especie() == "🐍")
+                {
+                    taplanN += 1;
+
+                }
+                else if (bitmonNacido.Especie() == "🐉")
+                {
+                    gofueN += 1;
+
+                }
+                else if (bitmonNacido.Especie() == "🌵")
+                {
+                    entN += 1;
+
+                }
+                else if (bitmonNacido.Especie() == "🦄")
+                {
+                    dotiN += 1;
+
+                }
+                else
+                {
+                    dorvalo1 += 1;
+
+                }
+            }
+
+
+            if (CantBitmons != 0)
+            {
+                MessageBox.Show("Tiempo de vida promedio de Bitmon: " + tiempoVidaBitmons / CantBitmons);
+            }
+
+
+            if (wetar != 0)
+            {
+                MessageBox.Show("Tiempo de vida promedio de Wetar: " + tiempoVidaWetar / wetar);
+                MessageBox.Show("Cantidad de hijos promedio: " + wetarN / wetar);
+                MessageBox.Show("Tasa bruta de Natalidad de Wetar: " + (wetar1 / wetar) * 1000);
+                MessageBox.Show("Tasa bruta de Mortalidad de Wetar: " + (wetarD / wetar) * 100);
+            }
+
+
+
+            if (dorvalo != 0)
+            {
+                MessageBox.Show("Tiempo de vida promedio de Dorvalo: " + tiempoVidaDorvalo / dorvalo);
+                MessageBox.Show("Tiempo de vida promedio de Dorvalo: " + wetarN / dorvalo);
+                MessageBox.Show("Tasa bruta de Natalidad de Dorvalo: " + (dorvalo1 / dorvalo) * 1000);
+                MessageBox.Show("Tasa bruta de Mortalidad de Dorvalo: " + (dorvaloD / dorvalo) * 100);
+            }
+
+            if (taplan != 0)
+            {
+                MessageBox.Show("Tiempo de vida promedio de Taplan: " + tiempoVidaTaplan / taplan);
+                MessageBox.Show("Tiempo de vida promedio de Taplan: " + taplanN / taplan);
+                MessageBox.Show("Tasa bruta de Natalidad de Taplan: " + (taplan1 / taplan) * 1000);
+                MessageBox.Show("Tasa bruta de Mortalidad de Taplan: " + (taplanD / taplan) * 100);
+            }
+            if (gofue != 0)
+            {
+                MessageBox.Show("Tiempo de vida promedio de Gofue: " + tiempoVidaGofue / gofue);
+                MessageBox.Show("Tiempo de vida promedio de Gofue: " + gofueN / gofue);
+                MessageBox.Show("Tasa bruta de Natalidad de Gofue: " + (gofue1 / gofue) * 1000);
+                MessageBox.Show("Tasa bruta de Mortalidad de Gofue: " + (gofueD / gofue) * 100);
+            }
+
+            if (ent != 0)
+            {
+                MessageBox.Show("Tiempo de vida promedio de Ent: " + tiempoVidaEnt / ent);
+                MessageBox.Show("Tiempo de vida promedio de Ent: " + entN / ent);
+                MessageBox.Show("Tasa bruta de Natalidad de Ent: " + (ent1 / ent) * 1000);
+                MessageBox.Show("Tasa bruta de Mortalidad de Ent: " + (entD / ent) * 100);
+            }
+
+            if (doti != 0)
+            {
+                MessageBox.Show("Tiempo de vida promedio de Doti: " + tiempoVidaDoti / doti);
+                MessageBox.Show("Tiempo de vida promedio de Doti: " + dotiN / doti);
+                MessageBox.Show("Tasa bruta de Natalidad de Doti: " + (doti1 / doti) * 1000);
+                MessageBox.Show("Tasa bruta de Mortalidad de Doti: " + (dotiD / doti) * 100);
+            }
+            if (bithalla.Count() != 0)
+            {
+                MessageBox.Show("Descripcion de la poblacion de Bithalla: " +
+                "\n Wetar: " + wetarD + "es el  " + wetarD / bithalla.Count() * 100 + "% del Bithalla" +
+                "\n Taplan: " + taplanD + "es el  " + taplanD / bithalla.Count() * 100 + "% del Bithalla" +
+                "\n Gofue: " + gofueD + "es el  " + gofueD / bithalla.Count() * 100 + "% del Bithalla" +
+                "\n Ent: " + entD + "es el  " + entD / bithalla.Count() * 100 + "% del Bithalla" +
+                "\n Doti: " + dotiD + "es el  " + dotiD / bithalla.Count() * 100 + "% del Bithalla" +
+                "\n Dorvalo: " + dorvaloD + "es el  " + dorvaloD / bithalla.Count() * 100 + "% del Bithalla");
+            }
+
+            if (wetarM == "")
+            {
+                MessageBox.Show("wetar extinto");
+            }
+            if (taplanM == "")
+            {
+                MessageBox.Show("Taplan extinto");
+            }
+            if (gofueM == "")
+            {
+                MessageBox.Show("Gofue extinto");
+            }
+            if (entM == "")
+            {
+                MessageBox.Show("Ent extinto");
+            }
+            if (dotiM == "")
+            {
+                MessageBox.Show("Doti extinto");
+            }
+            if (dorvaloM == "")
+            {
+                MessageBox.Show("Dorvalo extinto");
+            }
         }
     }
 }
