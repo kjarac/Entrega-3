@@ -353,6 +353,20 @@ namespace Entrega3
                                 }
 
                             }
+                            foreach(Bitmon bitmon in listaTipoBitmons)
+                            {
+                                bitmon.CambioTerreno(matrizBotones);
+                                if (bitmon.AfinidadTerreno(matrizBotones))
+                                {
+                                    bitmon.ReducirTiempoDeVida(2);
+
+                                }
+                                else
+                                {
+                                    bitmon.ReducirTiempoDeVida(1);
+                                }
+                            }
+                            
                         }
                     }
                     b++;
@@ -609,7 +623,7 @@ namespace Entrega3
 
             if (wetarM == "")
             {
-                MessageBox.Show("wetar extinto");
+                MessageBox.Show("Wetar extinto");
             }
             if (taplanM == "")
             {
